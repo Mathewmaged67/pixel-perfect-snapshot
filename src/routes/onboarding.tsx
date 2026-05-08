@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { CharacterSprite } from "@/components/rpg/character-sprite";
 import { useCharacterStore } from "@/stores/character-store";
 import type { CharacterClass, Gender } from "@/lib/types";
-import { Swords, Bow, Wand2, Shield } from "lucide-react";
+import { Swords, Target, Wand2, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/onboarding")({
 
 const CLASSES: { id: CharacterClass; label: string; tagline: string; icon: typeof Swords }[] = [
   { id: "warrior", label: "Warrior", tagline: "Strength & powerlifting", icon: Swords },
-  { id: "ranger", label: "Ranger", tagline: "Cardio & endurance", icon: Bow },
+  { id: "ranger", label: "Ranger", tagline: "Cardio & endurance", icon: Target },
   { id: "mage", label: "Mage", tagline: "Mobility & yoga", icon: Wand2 },
   { id: "paladin", label: "Paladin", tagline: "Balanced fitness", icon: Shield },
 ];
