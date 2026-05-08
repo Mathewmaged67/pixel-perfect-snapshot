@@ -10,13 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkoutRouteImport } from './routes/workout'
+import { Route as QuestsRouteImport } from './routes/quests'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as NutritionRouteImport } from './routes/nutrition'
+import { Route as InventoryRouteImport } from './routes/inventory'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkoutIndexRouteImport } from './routes/workout.index'
+import { Route as NutritionIndexRouteImport } from './routes/nutrition.index'
 import { Route as WorkoutTemplatesRouteImport } from './routes/workout.templates'
 import { Route as WorkoutHistoryRouteImport } from './routes/workout.history'
 import { Route as WorkoutIdRouteImport } from './routes/workout.$id'
+import { Route as NutritionTodayRouteImport } from './routes/nutrition.today'
+import { Route as NutritionPostWorkoutRouteImport } from './routes/nutrition.post-workout'
+import { Route as NutritionLogRouteImport } from './routes/nutrition.log'
+import { Route as NutritionGoalsRouteImport } from './routes/nutrition.goals'
 import { Route as WorkoutSummaryIdRouteImport } from './routes/workout.summary.$id'
 
 const WorkoutRoute = WorkoutRouteImport.update({
@@ -24,9 +33,29 @@ const WorkoutRoute = WorkoutRouteImport.update({
   path: '/workout',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuestsRoute = QuestsRouteImport.update({
+  id: '/quests',
+  path: '/quests',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NutritionRoute = NutritionRouteImport.update({
+  id: '/nutrition',
+  path: '/nutrition',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InventoryRoute = InventoryRouteImport.update({
+  id: '/inventory',
+  path: '/inventory',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -44,6 +73,11 @@ const WorkoutIndexRoute = WorkoutIndexRouteImport.update({
   path: '/',
   getParentRoute: () => WorkoutRoute,
 } as any)
+const NutritionIndexRoute = NutritionIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => NutritionRoute,
+} as any)
 const WorkoutTemplatesRoute = WorkoutTemplatesRouteImport.update({
   id: '/templates',
   path: '/templates',
@@ -59,6 +93,26 @@ const WorkoutIdRoute = WorkoutIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => WorkoutRoute,
 } as any)
+const NutritionTodayRoute = NutritionTodayRouteImport.update({
+  id: '/today',
+  path: '/today',
+  getParentRoute: () => NutritionRoute,
+} as any)
+const NutritionPostWorkoutRoute = NutritionPostWorkoutRouteImport.update({
+  id: '/post-workout',
+  path: '/post-workout',
+  getParentRoute: () => NutritionRoute,
+} as any)
+const NutritionLogRoute = NutritionLogRouteImport.update({
+  id: '/log',
+  path: '/log',
+  getParentRoute: () => NutritionRoute,
+} as any)
+const NutritionGoalsRoute = NutritionGoalsRouteImport.update({
+  id: '/goals',
+  path: '/goals',
+  getParentRoute: () => NutritionRoute,
+} as any)
 const WorkoutSummaryIdRoute = WorkoutSummaryIdRouteImport.update({
   id: '/summary/$id',
   path: '/summary/$id',
@@ -68,21 +122,38 @@ const WorkoutSummaryIdRoute = WorkoutSummaryIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
+  '/inventory': typeof InventoryRoute
+  '/nutrition': typeof NutritionRouteWithChildren
   '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/quests': typeof QuestsRoute
   '/workout': typeof WorkoutRouteWithChildren
+  '/nutrition/goals': typeof NutritionGoalsRoute
+  '/nutrition/log': typeof NutritionLogRoute
+  '/nutrition/post-workout': typeof NutritionPostWorkoutRoute
+  '/nutrition/today': typeof NutritionTodayRoute
   '/workout/$id': typeof WorkoutIdRoute
   '/workout/history': typeof WorkoutHistoryRoute
   '/workout/templates': typeof WorkoutTemplatesRoute
+  '/nutrition/': typeof NutritionIndexRoute
   '/workout/': typeof WorkoutIndexRoute
   '/workout/summary/$id': typeof WorkoutSummaryIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
+  '/inventory': typeof InventoryRoute
   '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/quests': typeof QuestsRoute
+  '/nutrition/goals': typeof NutritionGoalsRoute
+  '/nutrition/log': typeof NutritionLogRoute
+  '/nutrition/post-workout': typeof NutritionPostWorkoutRoute
+  '/nutrition/today': typeof NutritionTodayRoute
   '/workout/$id': typeof WorkoutIdRoute
   '/workout/history': typeof WorkoutHistoryRoute
   '/workout/templates': typeof WorkoutTemplatesRoute
+  '/nutrition': typeof NutritionIndexRoute
   '/workout': typeof WorkoutIndexRoute
   '/workout/summary/$id': typeof WorkoutSummaryIdRoute
 }
@@ -90,11 +161,20 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
+  '/inventory': typeof InventoryRoute
+  '/nutrition': typeof NutritionRouteWithChildren
   '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/quests': typeof QuestsRoute
   '/workout': typeof WorkoutRouteWithChildren
+  '/nutrition/goals': typeof NutritionGoalsRoute
+  '/nutrition/log': typeof NutritionLogRoute
+  '/nutrition/post-workout': typeof NutritionPostWorkoutRoute
+  '/nutrition/today': typeof NutritionTodayRoute
   '/workout/$id': typeof WorkoutIdRoute
   '/workout/history': typeof WorkoutHistoryRoute
   '/workout/templates': typeof WorkoutTemplatesRoute
+  '/nutrition/': typeof NutritionIndexRoute
   '/workout/': typeof WorkoutIndexRoute
   '/workout/summary/$id': typeof WorkoutSummaryIdRoute
 }
@@ -103,32 +183,58 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/dashboard'
+    | '/inventory'
+    | '/nutrition'
     | '/onboarding'
+    | '/profile'
+    | '/quests'
     | '/workout'
+    | '/nutrition/goals'
+    | '/nutrition/log'
+    | '/nutrition/post-workout'
+    | '/nutrition/today'
     | '/workout/$id'
     | '/workout/history'
     | '/workout/templates'
+    | '/nutrition/'
     | '/workout/'
     | '/workout/summary/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/dashboard'
+    | '/inventory'
     | '/onboarding'
+    | '/profile'
+    | '/quests'
+    | '/nutrition/goals'
+    | '/nutrition/log'
+    | '/nutrition/post-workout'
+    | '/nutrition/today'
     | '/workout/$id'
     | '/workout/history'
     | '/workout/templates'
+    | '/nutrition'
     | '/workout'
     | '/workout/summary/$id'
   id:
     | '__root__'
     | '/'
     | '/dashboard'
+    | '/inventory'
+    | '/nutrition'
     | '/onboarding'
+    | '/profile'
+    | '/quests'
     | '/workout'
+    | '/nutrition/goals'
+    | '/nutrition/log'
+    | '/nutrition/post-workout'
+    | '/nutrition/today'
     | '/workout/$id'
     | '/workout/history'
     | '/workout/templates'
+    | '/nutrition/'
     | '/workout/'
     | '/workout/summary/$id'
   fileRoutesById: FileRoutesById
@@ -136,7 +242,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DashboardRoute: typeof DashboardRoute
+  InventoryRoute: typeof InventoryRoute
+  NutritionRoute: typeof NutritionRouteWithChildren
   OnboardingRoute: typeof OnboardingRoute
+  ProfileRoute: typeof ProfileRoute
+  QuestsRoute: typeof QuestsRoute
   WorkoutRoute: typeof WorkoutRouteWithChildren
 }
 
@@ -149,11 +259,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkoutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quests': {
+      id: '/quests'
+      path: '/quests'
+      fullPath: '/quests'
+      preLoaderRoute: typeof QuestsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nutrition': {
+      id: '/nutrition'
+      path: '/nutrition'
+      fullPath: '/nutrition'
+      preLoaderRoute: typeof NutritionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inventory': {
+      id: '/inventory'
+      path: '/inventory'
+      fullPath: '/inventory'
+      preLoaderRoute: typeof InventoryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -177,6 +315,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkoutIndexRouteImport
       parentRoute: typeof WorkoutRoute
     }
+    '/nutrition/': {
+      id: '/nutrition/'
+      path: '/'
+      fullPath: '/nutrition/'
+      preLoaderRoute: typeof NutritionIndexRouteImport
+      parentRoute: typeof NutritionRoute
+    }
     '/workout/templates': {
       id: '/workout/templates'
       path: '/templates'
@@ -198,6 +343,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkoutIdRouteImport
       parentRoute: typeof WorkoutRoute
     }
+    '/nutrition/today': {
+      id: '/nutrition/today'
+      path: '/today'
+      fullPath: '/nutrition/today'
+      preLoaderRoute: typeof NutritionTodayRouteImport
+      parentRoute: typeof NutritionRoute
+    }
+    '/nutrition/post-workout': {
+      id: '/nutrition/post-workout'
+      path: '/post-workout'
+      fullPath: '/nutrition/post-workout'
+      preLoaderRoute: typeof NutritionPostWorkoutRouteImport
+      parentRoute: typeof NutritionRoute
+    }
+    '/nutrition/log': {
+      id: '/nutrition/log'
+      path: '/log'
+      fullPath: '/nutrition/log'
+      preLoaderRoute: typeof NutritionLogRouteImport
+      parentRoute: typeof NutritionRoute
+    }
+    '/nutrition/goals': {
+      id: '/nutrition/goals'
+      path: '/goals'
+      fullPath: '/nutrition/goals'
+      preLoaderRoute: typeof NutritionGoalsRouteImport
+      parentRoute: typeof NutritionRoute
+    }
     '/workout/summary/$id': {
       id: '/workout/summary/$id'
       path: '/summary/$id'
@@ -207,6 +380,26 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface NutritionRouteChildren {
+  NutritionGoalsRoute: typeof NutritionGoalsRoute
+  NutritionLogRoute: typeof NutritionLogRoute
+  NutritionPostWorkoutRoute: typeof NutritionPostWorkoutRoute
+  NutritionTodayRoute: typeof NutritionTodayRoute
+  NutritionIndexRoute: typeof NutritionIndexRoute
+}
+
+const NutritionRouteChildren: NutritionRouteChildren = {
+  NutritionGoalsRoute: NutritionGoalsRoute,
+  NutritionLogRoute: NutritionLogRoute,
+  NutritionPostWorkoutRoute: NutritionPostWorkoutRoute,
+  NutritionTodayRoute: NutritionTodayRoute,
+  NutritionIndexRoute: NutritionIndexRoute,
+}
+
+const NutritionRouteWithChildren = NutritionRoute._addFileChildren(
+  NutritionRouteChildren,
+)
 
 interface WorkoutRouteChildren {
   WorkoutIdRoute: typeof WorkoutIdRoute
@@ -230,7 +423,11 @@ const WorkoutRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DashboardRoute: DashboardRoute,
+  InventoryRoute: InventoryRoute,
+  NutritionRoute: NutritionRouteWithChildren,
   OnboardingRoute: OnboardingRoute,
+  ProfileRoute: ProfileRoute,
+  QuestsRoute: QuestsRoute,
   WorkoutRoute: WorkoutRouteWithChildren,
 }
 export const routeTree = rootRouteImport
