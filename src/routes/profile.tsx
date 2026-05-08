@@ -1,5 +1,4 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { AppShell } from "@/components/layout/app-shell";
 import { useCharacterStore } from "@/stores/character-store";
 import { useUiStore } from "@/stores/ui-store";
 import { useWorkoutStore } from "@/stores/workout-store";
@@ -24,7 +23,7 @@ function Profile() {
   const history = useWorkoutStore((s) => s.history);
 
   return (
-    <AppShell>
+    <>
       <header className="mb-6">
         <h1 className="text-xl">{c.name || "Hero"}</h1>
         <p className="text-sm text-muted-foreground">Lv. {c.level} {c.characterClass}</p>
@@ -113,6 +112,6 @@ function Profile() {
           </div>
         </div>
       </div>
-    </AppShell>
+    </>
   );
 }

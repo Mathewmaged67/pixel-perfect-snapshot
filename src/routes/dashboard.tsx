@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo } from "react";
-import { AppShell } from "@/components/layout/app-shell";
 import { CharacterSprite } from "@/components/rpg/character-sprite";
 import { XpBar } from "@/components/rpg/xp-bar";
 import { VitalBar } from "@/components/rpg/vital-bar";
@@ -15,6 +14,7 @@ import { useQuestStore } from "@/stores/quest-store";
 import { useWorkoutStore } from "@/stores/workout-store";
 import { Sword, Apple, Dumbbell, Trophy } from "lucide-react";
 import { calculateTodayTotals } from "@/stores/nutrition-store";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
@@ -32,11 +32,21 @@ function Dashboard() {
   const log = useNutritionStore((s) => s.log);
   const totals = useMemo(() => calculateTodayTotals(log), [log]);
   const quests = useQuestStore((s) => s.quests);
+  const complete = useQuestStore((s) => s.complete);
   const history = useWorkoutStore((s) => s.history);
-  const dailyQuests = quests.filter((q) => q.scope === "daily").slice(0, 3);
+  const activeDailyQuest = quests.find((q) => q.scope === "daily" && q.progress < q.goal);
+
+  const claimQuest = (id: string) => {
+    const quest = quests.find((q) => q.id === id);
+    if (!quest) return;
+    complete(id);
+    c.addXp(quest.rewardXp);
+    c.addGold(quest.rewardGold);
+    toast.success(`+${quest.rewardXp} XP, +${quest.rewardGold} gold`, { description: quest.title });
+  };
 
   return (
-    <AppShell>
+    <>
       <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="font-display text-[10px] uppercase text-muted-foreground">Welcome back</p>
@@ -82,9 +92,9 @@ function Dashboard() {
                 View all
               </Link>
             </div>
-            {dailyQuests[0] ? (
+            {activeDailyQuest ? (
               <div className="mt-4">
-                <QuestCard quest={dailyQuests[0]} />
+                <QuestCard quest={activeDailyQuest} onComplete={claimQuest} />
               </div>
             ) : (
               <p className="mt-4 text-sm text-muted-foreground">No active quests.</p>
@@ -168,6 +178,6 @@ function Dashboard() {
           </div>
         </aside>
       </div>
-    </AppShell>
+    </>
   );
 }

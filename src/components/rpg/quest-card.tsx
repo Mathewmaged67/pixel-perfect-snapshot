@@ -47,7 +47,7 @@ export function QuestCard({ quest, onComplete }: QuestCardProps) {
               onClick={() => onComplete(quest.id)}
               className="font-display text-[10px] uppercase text-gold hover:text-foreground"
             >
-              Claim
+              Done
             </button>
           )}
         </div>

@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AppShell } from "@/components/layout/app-shell";
 import { useQuestStore } from "@/stores/quest-store";
 import { useCharacterStore } from "@/stores/character-store";
 import { QuestCard } from "@/components/rpg/quest-card";
@@ -36,7 +35,7 @@ function Quests() {
   ];
 
   return (
-    <AppShell>
+    <>
       <header className="mb-6">
         <h1 className="text-xl">Quest board</h1>
         <p className="text-sm text-muted-foreground">Complete quests to earn XP, gold, and gear.</p>
@@ -53,6 +52,6 @@ function Quests() {
           </section>
         ))}
       </div>
-    </AppShell>
+    </>
   );
 }

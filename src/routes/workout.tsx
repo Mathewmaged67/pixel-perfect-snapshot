@@ -1,5 +1,4 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
-import { AppShell } from "@/components/layout/app-shell";
 
 export const Route = createFileRoute("/workout")({
   head: () => ({
@@ -12,9 +11,5 @@ export const Route = createFileRoute("/workout")({
 });
 
 function WorkoutLayout() {
-  return (
-    <AppShell>
-      <Outlet />
-    </AppShell>
-  );
+  return <Outlet />;
 }

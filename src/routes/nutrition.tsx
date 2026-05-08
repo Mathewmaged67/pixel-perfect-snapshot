@@ -1,5 +1,4 @@
 import { createFileRoute, Outlet, Link, useRouterState } from "@tanstack/react-router";
-import { AppShell } from "@/components/layout/app-shell";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/nutrition")({
@@ -22,7 +21,7 @@ const TABS = [
 function NutritionLayout() {
   const path = useRouterState({ select: (s) => s.location.pathname });
   return (
-    <AppShell>
+    <>
       <header className="mb-4">
         <h1 className="text-xl">Nutrition</h1>
       </header>
@@ -41,6 +40,6 @@ function NutritionLayout() {
         ))}
       </nav>
       <Outlet />
-    </AppShell>
+    </>
   );
 }

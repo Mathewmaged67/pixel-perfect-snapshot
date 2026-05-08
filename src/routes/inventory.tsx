@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AppShell } from "@/components/layout/app-shell";
 import { useInventoryStore } from "@/stores/inventory-store";
 import { useCharacterStore } from "@/stores/character-store";
 import { LootCard } from "@/components/rpg/loot-card";
@@ -19,7 +18,7 @@ function Inventory() {
   const items = useInventoryStore((s) => s.items);
   const gold = useCharacterStore((s) => s.gold);
   return (
-    <AppShell>
+    <>
       <header className="mb-6 flex items-center justify-between">
         <h1 className="text-xl">Inventory</h1>
         <GoldCounter value={gold} />
@@ -36,6 +35,6 @@ function Inventory() {
           />
         ))}
       </div>
-    </AppShell>
+    </>
   );
 }

@@ -4,11 +4,13 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { MoonStar, SunMedium } from "lucide-react";
+import { AppShell } from "@/components/layout/app-shell";
 import { Toaster } from "@/components/ui/sonner";
 import { Button } from "@/components/ui/button";
 import { useUiStore } from "@/stores/ui-store";
@@ -112,6 +114,8 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const theme = useUiStore((s) => s.theme);
   const setTheme = useUiStore((s) => s.setTheme);
+  const path = useRouterState({ select: (s) => s.location.pathname });
+  const showShell = path !== "/" && !path.startsWith("/onboarding");
 
   useEffect(() => {
     document.documentElement.classList.toggle("light", theme === "light");
@@ -129,7 +133,13 @@ function RootComponent() {
       >
         {theme === "dark" ? <SunMedium /> : <MoonStar />}
       </Button>
-      <Outlet />
+      {showShell ? (
+        <AppShell>
+          <Outlet />
+        </AppShell>
+      ) : (
+        <Outlet />
+      )}
       <Toaster position="bottom-right" />
     </QueryClientProvider>
   );
