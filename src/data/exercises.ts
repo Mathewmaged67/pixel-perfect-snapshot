@@ -1,0 +1,36 @@
+import type { Exercise } from "@/lib/types";
+
+export const exercises: Exercise[] = [
+  { id: "ex-bench", name: "Barbell Bench Press", muscles: ["chest", "arms"], equipment: "barbell", defaultSets: 4, defaultReps: 8, category: "strength" },
+  { id: "ex-squat", name: "Back Squat", muscles: ["legs", "glutes"], equipment: "barbell", defaultSets: 5, defaultReps: 5, category: "strength" },
+  { id: "ex-dead", name: "Deadlift", muscles: ["back", "legs", "glutes"], equipment: "barbell", defaultSets: 3, defaultReps: 5, category: "strength" },
+  { id: "ex-ohp", name: "Overhead Press", muscles: ["shoulders", "arms"], equipment: "barbell", defaultSets: 4, defaultReps: 6, category: "strength" },
+  { id: "ex-row", name: "Barbell Row", muscles: ["back", "arms"], equipment: "barbell", defaultSets: 4, defaultReps: 8, category: "strength" },
+  { id: "ex-pull", name: "Pull Up", muscles: ["back", "arms"], equipment: "bodyweight", defaultSets: 4, defaultReps: 8, category: "strength" },
+  { id: "ex-dip", name: "Dip", muscles: ["chest", "arms"], equipment: "bodyweight", defaultSets: 3, defaultReps: 10, category: "strength" },
+  { id: "ex-curl", name: "Dumbbell Curl", muscles: ["arms"], equipment: "dumbbell", defaultSets: 3, defaultReps: 12, category: "strength" },
+  { id: "ex-tri", name: "Tricep Pushdown", muscles: ["arms"], equipment: "machine", defaultSets: 3, defaultReps: 12, category: "strength" },
+  { id: "ex-lat", name: "Lat Pulldown", muscles: ["back"], equipment: "machine", defaultSets: 3, defaultReps: 10, category: "strength" },
+  { id: "ex-leg", name: "Leg Press", muscles: ["legs", "glutes"], equipment: "machine", defaultSets: 4, defaultReps: 10, category: "strength" },
+  { id: "ex-rdl", name: "Romanian Deadlift", muscles: ["back", "glutes", "legs"], equipment: "barbell", defaultSets: 3, defaultReps: 8, category: "strength" },
+  { id: "ex-lunge", name: "Walking Lunge", muscles: ["legs", "glutes"], equipment: "dumbbell", defaultSets: 3, defaultReps: 12, category: "strength" },
+  { id: "ex-calf", name: "Calf Raise", muscles: ["legs"], equipment: "machine", defaultSets: 4, defaultReps: 15, category: "strength" },
+  { id: "ex-fly", name: "Cable Fly", muscles: ["chest"], equipment: "machine", defaultSets: 3, defaultReps: 12, category: "strength" },
+  { id: "ex-lateral", name: "Lateral Raise", muscles: ["shoulders"], equipment: "dumbbell", defaultSets: 3, defaultReps: 15, category: "strength" },
+  { id: "ex-rear", name: "Rear Delt Fly", muscles: ["shoulders", "back"], equipment: "dumbbell", defaultSets: 3, defaultReps: 12, category: "strength" },
+  { id: "ex-plank", name: "Plank", muscles: ["core"], equipment: "bodyweight", defaultSets: 3, defaultReps: 60, category: "strength" },
+  { id: "ex-crunch", name: "Cable Crunch", muscles: ["core"], equipment: "machine", defaultSets: 3, defaultReps: 15, category: "strength" },
+  { id: "ex-hang", name: "Hanging Leg Raise", muscles: ["core"], equipment: "bodyweight", defaultSets: 3, defaultReps: 10, category: "strength" },
+  { id: "ex-run", name: "Treadmill Run", muscles: ["cardio"], equipment: "cardio", defaultSets: 1, defaultReps: 30, category: "cardio" },
+  { id: "ex-bike", name: "Stationary Bike", muscles: ["cardio"], equipment: "cardio", defaultSets: 1, defaultReps: 30, category: "cardio" },
+  { id: "ex-row-c", name: "Rowing Machine", muscles: ["cardio", "back"], equipment: "cardio", defaultSets: 1, defaultReps: 20, category: "cardio" },
+  { id: "ex-jump", name: "Jump Rope", muscles: ["cardio"], equipment: "cardio", defaultSets: 3, defaultReps: 60, category: "cardio" },
+  { id: "ex-burp", name: "Burpees", muscles: ["fullbody", "cardio"], equipment: "bodyweight", defaultSets: 3, defaultReps: 12, category: "cardio" },
+  { id: "ex-yoga", name: "Sun Salutation Flow", muscles: ["fullbody"], equipment: "bodyweight", defaultSets: 3, defaultReps: 5, category: "mobility" },
+  { id: "ex-stretch", name: "Hip Mobility Flow", muscles: ["legs", "glutes"], equipment: "bodyweight", defaultSets: 2, defaultReps: 8, category: "mobility" },
+  { id: "ex-shoulder-mob", name: "Shoulder Dislocates", muscles: ["shoulders"], equipment: "bodyweight", defaultSets: 3, defaultReps: 10, category: "mobility" },
+  { id: "ex-cat", name: "Cat-Cow", muscles: ["back", "core"], equipment: "bodyweight", defaultSets: 2, defaultReps: 12, category: "mobility" },
+  { id: "ex-pigeon", name: "Pigeon Pose", muscles: ["glutes", "legs"], equipment: "bodyweight", defaultSets: 2, defaultReps: 60, category: "mobility" },
+];
+
+export const exerciseById = (id: string) => exercises.find((e) => e.id === id);
