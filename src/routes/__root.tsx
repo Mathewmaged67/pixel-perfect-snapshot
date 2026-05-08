@@ -7,7 +7,11 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { MoonStar, SunMedium } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
+import { Button } from "@/components/ui/button";
+import { useUiStore } from "@/stores/ui-store";
 
 import appCss from "../styles.css?url";
 
@@ -106,8 +110,25 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const theme = useUiStore((s) => s.theme);
+  const setTheme = useUiStore((s) => s.setTheme);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("light", theme === "light");
+  }, [theme]);
+
   return (
     <QueryClientProvider client={queryClient}>
+      <Button
+        type="button"
+        size="icon"
+        variant="outline"
+        aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        className="fixed right-4 top-4 z-50 rounded-full border-border/80 bg-background/90 shadow-lg backdrop-blur"
+      >
+        {theme === "dark" ? <SunMedium /> : <MoonStar />}
+      </Button>
       <Outlet />
       <Toaster position="bottom-right" />
     </QueryClientProvider>

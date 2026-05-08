@@ -6,7 +6,6 @@ import { useWorkoutStore } from "@/stores/workout-store";
 import { Button } from "@/components/ui/button";
 import { CharacterSprite } from "@/components/rpg/character-sprite";
 import { StatBadge } from "@/components/rpg/stat-badge";
-import { useEffect } from "react";
 
 export const Route = createFileRoute("/profile")({
   head: () => ({
@@ -22,10 +21,6 @@ function Profile() {
   const c = useCharacterStore();
   const ui = useUiStore();
   const history = useWorkoutStore((s) => s.history);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("light", ui.theme === "light");
-  }, [ui.theme]);
 
   return (
     <AppShell>

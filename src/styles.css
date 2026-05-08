@@ -59,8 +59,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   --font-display: "Press Start 2P", system-ui, sans-serif;
-  --font-body: "Cinzel", Georgia, serif;
-  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --font-body: "Press Start 2P", system-ui, sans-serif;
+  --font-mono: "Press Start 2P", system-ui, sans-serif;
 }
 
 :root {
@@ -155,6 +155,9 @@
     background: var(--gradient-mesh);
     background-attachment: fixed;
     color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+  button, input, select, textarea {
     font-family: var(--font-body);
   }
   h1, h2, h3, .font-display {
