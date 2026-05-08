@@ -30,7 +30,6 @@ const CLASSES: { id: CharacterClass; label: string; tagline: string; icon: typeo
 const GENDERS: { id: Gender; label: string }[] = [
   { id: "male", label: "Male" },
   { id: "female", label: "Female" },
-  { id: "nonbinary", label: "Non-binary" },
 ];
 
 function Onboarding() {

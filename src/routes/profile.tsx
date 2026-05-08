@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { AppShell } from "@/components/layout/app-shell";
 import { useCharacterStore } from "@/stores/character-store";
 import { useUiStore } from "@/stores/ui-store";
@@ -18,6 +18,7 @@ export const Route = createFileRoute("/profile")({
 });
 
 function Profile() {
+  const navigate = useNavigate();
   const c = useCharacterStore();
   const ui = useUiStore();
   const history = useWorkoutStore((s) => s.history);
@@ -96,7 +97,15 @@ function Profile() {
               </div>
               <div>
                 <p className="text-[10px] uppercase text-muted-foreground">Reset</p>
-                <Button size="sm" variant="destructive" className="mt-1" onClick={() => c.reset()}>
+                <Button
+                  size="sm"
+                  variant="destructive"
+                  className="mt-1"
+                  onClick={() => {
+                    c.reset();
+                    navigate({ to: "/onboarding" });
+                  }}
+                >
                   Restart character
                 </Button>
               </div>
