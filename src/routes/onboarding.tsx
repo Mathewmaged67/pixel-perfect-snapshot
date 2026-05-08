@@ -170,9 +170,11 @@ function Onboarding() {
         </div>
 
         <div className="mt-8 flex justify-between gap-3">
-          <Button variant="ghost" onClick={back} disabled={step === 0}>
-            Back
-          </Button>
+          {step > 0 && (
+            <Button variant="ghost" onClick={back}>
+              Back
+            </Button>
+          )}
           {step < 3 ? (
             <Button onClick={next}>Next</Button>
           ) : (

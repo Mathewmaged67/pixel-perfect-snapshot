@@ -1,6 +1,7 @@
 import { toast } from "sonner";
 import { useCharacterStore } from "@/stores/character-store";
 import { useNutritionStore, type NutritionTotals } from "@/stores/nutrition-store";
+import { useQuestStore } from "@/stores/quest-store";
 import type { SessionExercise, StatKey, WorkoutSession } from "@/lib/types";
 import { exerciseById } from "@/data/exercises";
 import { foodById } from "@/data/foods";
@@ -66,6 +67,7 @@ export const logMealRewards = (foodId: string, servings: number) => {
   character.addXp(xp);
   character.addMp(Math.round((food.carbs * servings) / 4));
   character.addHp(Math.round((food.protein * servings) / 5));
+  useQuestStore.getState().bumpProgress("q-d1", 1);
   toast.success(`+${xp} VIT XP`, { description: `${food.name} logged` });
 };
 
