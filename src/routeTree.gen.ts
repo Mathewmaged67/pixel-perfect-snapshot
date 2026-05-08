@@ -9,10 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorkoutRouteImport } from './routes/workout'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkoutIndexRouteImport } from './routes/workout.index'
+import { Route as WorkoutTemplatesRouteImport } from './routes/workout.templates'
+import { Route as WorkoutHistoryRouteImport } from './routes/workout.history'
+import { Route as WorkoutIdRouteImport } from './routes/workout.$id'
+import { Route as WorkoutSummaryIdRouteImport } from './routes/workout.summary.$id'
 
+const WorkoutRoute = WorkoutRouteImport.update({
+  id: '/workout',
+  path: '/workout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
@@ -28,39 +39,116 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkoutIndexRoute = WorkoutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => WorkoutRoute,
+} as any)
+const WorkoutTemplatesRoute = WorkoutTemplatesRouteImport.update({
+  id: '/templates',
+  path: '/templates',
+  getParentRoute: () => WorkoutRoute,
+} as any)
+const WorkoutHistoryRoute = WorkoutHistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => WorkoutRoute,
+} as any)
+const WorkoutIdRoute = WorkoutIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => WorkoutRoute,
+} as any)
+const WorkoutSummaryIdRoute = WorkoutSummaryIdRouteImport.update({
+  id: '/summary/$id',
+  path: '/summary/$id',
+  getParentRoute: () => WorkoutRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/onboarding': typeof OnboardingRoute
+  '/workout': typeof WorkoutRouteWithChildren
+  '/workout/$id': typeof WorkoutIdRoute
+  '/workout/history': typeof WorkoutHistoryRoute
+  '/workout/templates': typeof WorkoutTemplatesRoute
+  '/workout/': typeof WorkoutIndexRoute
+  '/workout/summary/$id': typeof WorkoutSummaryIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/onboarding': typeof OnboardingRoute
+  '/workout/$id': typeof WorkoutIdRoute
+  '/workout/history': typeof WorkoutHistoryRoute
+  '/workout/templates': typeof WorkoutTemplatesRoute
+  '/workout': typeof WorkoutIndexRoute
+  '/workout/summary/$id': typeof WorkoutSummaryIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/onboarding': typeof OnboardingRoute
+  '/workout': typeof WorkoutRouteWithChildren
+  '/workout/$id': typeof WorkoutIdRoute
+  '/workout/history': typeof WorkoutHistoryRoute
+  '/workout/templates': typeof WorkoutTemplatesRoute
+  '/workout/': typeof WorkoutIndexRoute
+  '/workout/summary/$id': typeof WorkoutSummaryIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard' | '/onboarding'
+  fullPaths:
+    | '/'
+    | '/dashboard'
+    | '/onboarding'
+    | '/workout'
+    | '/workout/$id'
+    | '/workout/history'
+    | '/workout/templates'
+    | '/workout/'
+    | '/workout/summary/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/onboarding'
-  id: '__root__' | '/' | '/dashboard' | '/onboarding'
+  to:
+    | '/'
+    | '/dashboard'
+    | '/onboarding'
+    | '/workout/$id'
+    | '/workout/history'
+    | '/workout/templates'
+    | '/workout'
+    | '/workout/summary/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/dashboard'
+    | '/onboarding'
+    | '/workout'
+    | '/workout/$id'
+    | '/workout/history'
+    | '/workout/templates'
+    | '/workout/'
+    | '/workout/summary/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DashboardRoute: typeof DashboardRoute
   OnboardingRoute: typeof OnboardingRoute
+  WorkoutRoute: typeof WorkoutRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/workout': {
+      id: '/workout'
+      path: '/workout'
+      fullPath: '/workout'
+      preLoaderRoute: typeof WorkoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
@@ -82,13 +170,68 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/workout/': {
+      id: '/workout/'
+      path: '/'
+      fullPath: '/workout/'
+      preLoaderRoute: typeof WorkoutIndexRouteImport
+      parentRoute: typeof WorkoutRoute
+    }
+    '/workout/templates': {
+      id: '/workout/templates'
+      path: '/templates'
+      fullPath: '/workout/templates'
+      preLoaderRoute: typeof WorkoutTemplatesRouteImport
+      parentRoute: typeof WorkoutRoute
+    }
+    '/workout/history': {
+      id: '/workout/history'
+      path: '/history'
+      fullPath: '/workout/history'
+      preLoaderRoute: typeof WorkoutHistoryRouteImport
+      parentRoute: typeof WorkoutRoute
+    }
+    '/workout/$id': {
+      id: '/workout/$id'
+      path: '/$id'
+      fullPath: '/workout/$id'
+      preLoaderRoute: typeof WorkoutIdRouteImport
+      parentRoute: typeof WorkoutRoute
+    }
+    '/workout/summary/$id': {
+      id: '/workout/summary/$id'
+      path: '/summary/$id'
+      fullPath: '/workout/summary/$id'
+      preLoaderRoute: typeof WorkoutSummaryIdRouteImport
+      parentRoute: typeof WorkoutRoute
+    }
   }
 }
+
+interface WorkoutRouteChildren {
+  WorkoutIdRoute: typeof WorkoutIdRoute
+  WorkoutHistoryRoute: typeof WorkoutHistoryRoute
+  WorkoutTemplatesRoute: typeof WorkoutTemplatesRoute
+  WorkoutIndexRoute: typeof WorkoutIndexRoute
+  WorkoutSummaryIdRoute: typeof WorkoutSummaryIdRoute
+}
+
+const WorkoutRouteChildren: WorkoutRouteChildren = {
+  WorkoutIdRoute: WorkoutIdRoute,
+  WorkoutHistoryRoute: WorkoutHistoryRoute,
+  WorkoutTemplatesRoute: WorkoutTemplatesRoute,
+  WorkoutIndexRoute: WorkoutIndexRoute,
+  WorkoutSummaryIdRoute: WorkoutSummaryIdRoute,
+}
+
+const WorkoutRouteWithChildren =
+  WorkoutRoute._addFileChildren(WorkoutRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DashboardRoute: DashboardRoute,
   OnboardingRoute: OnboardingRoute,
+  WorkoutRoute: WorkoutRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
