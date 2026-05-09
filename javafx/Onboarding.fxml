@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="OnboardingController"
+           stylesheets="@onboarding.css" styleClass="onboarding-root">
+    <fx:define>
+        <ToggleGroup fx:id="genderGroup"/>
+        <ToggleGroup fx:id="classGroup"/>
+    </fx:define>
+
+    <children>
+        <Region fx:id="overlay" styleClass="hero-overlay" />
+
+        <VBox fx:id="card" styleClass="card" maxWidth="720" spacing="18">
+            <padding>
+                <Insets top="24" right="24" bottom="24" left="24"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label text="Forge your hero" styleClass="title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="stepLabel" styleClass="step-label"/>
+            </HBox>
+
+            <StackPane fx:id="progressTrack" styleClass="progress-track" minHeight="4" maxHeight="4">
+                <Region fx:id="progressFill" styleClass="progress-fill" StackPane.alignment="CENTER_LEFT"/>
+            </StackPane>
+
+            <StackPane fx:id="stepContainer" styleClass="step-container" minHeight="320">
+                <VBox.margin>
+                    <Insets top="24"/>
+                </VBox.margin>
+
+                <GridPane fx:id="step0Pane" hgap="24" vgap="16" alignment="CENTER_LEFT">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="220" prefWidth="220" maxWidth="220"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+                    <children>
+                        <StackPane styleClass="sprite-frame" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <ImageView fx:id="spriteViewMain" fitWidth="220" fitHeight="220" preserveRatio="true" smooth="true"/>
+                        </StackPane>
+
+                        <VBox spacing="16" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                            <VBox spacing="6">
+                                <Label text="Hero name" styleClass="field-label"/>
+                                <TextField fx:id="nameField" promptText="Aelric the Bold" styleClass="input-field"/>
+                            </VBox>
+
+                            <VBox spacing="6">
+                                <Label text="Avatar" styleClass="field-label"/>
+                                <FlowPane hgap="8" vgap="8">
+                                    <children>
+                                        <ToggleButton fx:id="maleToggle" text="Male" toggleGroup="$genderGroup" userData="male" styleClass="toggle-pill"/>
+                                        <ToggleButton fx:id="femaleToggle" text="Female" toggleGroup="$genderGroup" userData="female" styleClass="toggle-pill"/>
+                                    </children>
+                                </FlowPane>
+                            </VBox>
+                        </VBox>
+                    </children>
+                </GridPane>
+
+                <GridPane fx:id="step1Pane" hgap="12" vgap="12" alignment="CENTER_LEFT">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+                    <children>
+                        <ToggleButton fx:id="warriorToggle" toggleGroup="$classGroup" userData="warrior"
+                                      styleClass="toggle-card" contentDisplay="GRAPHIC_ONLY"
+                                      GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity">
+                            <graphic>
+                                <HBox spacing="12" alignment="CENTER_LEFT">
+                                    <Label text="W" styleClass="class-icon"/>
+                                    <VBox spacing="4">
+                                        <Label text="Warrior" styleClass="class-title"/>
+                                        <Label text="Strength &amp; powerlifting" styleClass="class-tagline"/>
+                                    </VBox>
+                                </HBox>
+                            </graphic>
+                        </ToggleButton>
+
+                        <ToggleButton fx:id="rangerToggle" toggleGroup="$classGroup" userData="ranger"
+                                      styleClass="toggle-card" contentDisplay="GRAPHIC_ONLY"
+                                      GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity">
+                            <graphic>
+                                <HBox spacing="12" alignment="CENTER_LEFT">
+                                    <Label text="R" styleClass="class-icon"/>
+                                    <VBox spacing="4">
+                                        <Label text="Ranger" styleClass="class-title"/>
+                                        <Label text="Cardio &amp; endurance" styleClass="class-tagline"/>
+                                    </VBox>
+                                </HBox>
+                            </graphic>
+                        </ToggleButton>
+
+                        <ToggleButton fx:id="mageToggle" toggleGroup="$classGroup" userData="mage"
+                                      styleClass="toggle-card" contentDisplay="GRAPHIC_ONLY"
+                                      GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="Infinity">
+                            <graphic>
+                                <HBox spacing="12" alignment="CENTER_LEFT">
+                                    <Label text="M" styleClass="class-icon"/>
+                                    <VBox spacing="4">
+                                        <Label text="Mage" styleClass="class-title"/>
+                                        <Label text="Mobility &amp; yoga" styleClass="class-tagline"/>
+                                    </VBox>
+                                </HBox>
+                            </graphic>
+                        </ToggleButton>
+
+                        <ToggleButton fx:id="paladinToggle" toggleGroup="$classGroup" userData="paladin"
+                                      styleClass="toggle-card" contentDisplay="GRAPHIC_ONLY"
+                                      GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity">
+                            <graphic>
+                                <HBox spacing="12" alignment="CENTER_LEFT">
+                                    <Label text="P" styleClass="class-icon"/>
+                                    <VBox spacing="4">
+                                        <Label text="Paladin" styleClass="class-title"/>
+                                        <Label text="Balanced fitness" styleClass="class-tagline"/>
+                                    </VBox>
+                                </HBox>
+                            </graphic>
+                        </ToggleButton>
+                    </children>
+                </GridPane>
+
+                <GridPane fx:id="step2Pane" hgap="16" vgap="12" alignment="TOP_LEFT">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+                    <children>
+                        <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <Label text="Weight (kg)" styleClass="field-label"/>
+                            <TextField fx:id="weightField" styleClass="input-field"/>
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                            <Label text="Height (cm)" styleClass="field-label"/>
+                            <TextField fx:id="heightField" styleClass="input-field"/>
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                            <Label text="Weekly workouts" styleClass="field-label"/>
+                            <TextField fx:id="targetField" styleClass="input-field"/>
+                        </VBox>
+
+                        <Label text="These shape your starting goals. You can change them later in your profile."
+                               styleClass="muted-text" wrapText="true" maxWidth="520"
+                               GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="3"/>
+                    </children>
+                </GridPane>
+
+                <VBox fx:id="step3Pane" alignment="CENTER" spacing="16">
+                    <StackPane styleClass="sprite-frame">
+                        <ImageView fx:id="spriteViewFinal" fitWidth="200" fitHeight="200" preserveRatio="true" smooth="true"/>
+                    </StackPane>
+                    <VBox alignment="CENTER" spacing="8" maxWidth="480">
+                        <Label text="Your quest begins" styleClass="title-large text-glow-gold"/>
+                        <Label fx:id="summaryLabel" styleClass="muted-text" wrapText="true" textAlignment="CENTER"/>
+                    </VBox>
+                </VBox>
+            </StackPane>
+
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <VBox.margin>
+                    <Insets top="24"/>
+                </VBox.margin>
+                <Button fx:id="backButton" text="Back" onAction="#onBack" styleClass="btn btn-ghost"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="nextButton" text="Next" onAction="#onNext" styleClass="btn btn-primary"/>
+                <Button fx:id="finishButton" text="Begin quest" onAction="#onFinish" styleClass="btn btn-gold"/>
+            </HBox>
+        </VBox>
+    </children>
+</StackPane>

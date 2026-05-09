@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="DashboardController" styleClass="app-root">
+  <left>
+    <fx:include source="Nav.fxml" fx:id="nav" />
+  </left>
+  <center>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="content-scroll">
+      <content>
+        <VBox spacing="20" styleClass="content">
+          <HBox spacing="16" alignment="CENTER_LEFT">
+            <VBox spacing="4">
+              <Label text="WELCOME BACK" styleClass="eyebrow" />
+              <Label fx:id="headerNameLabel" styleClass="page-title" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox spacing="10">
+              <HBox spacing="6" styleClass="badge">
+                <Label text="STREAK" styleClass="badge-label" />
+                <Label fx:id="streakLabel" styleClass="badge-value" />
+              </HBox>
+              <HBox spacing="6" styleClass="badge">
+                <Label text="GOLD" styleClass="badge-label" />
+                <Label fx:id="goldLabel" styleClass="badge-value" />
+              </HBox>
+            </HBox>
+          </HBox>
+
+          <GridPane hgap="20" vgap="20">
+            <columnConstraints>
+              <ColumnConstraints minWidth="300" prefWidth="320" />
+              <ColumnConstraints hgrow="ALWAYS" />
+              <ColumnConstraints minWidth="300" prefWidth="320" />
+            </columnConstraints>
+
+            <VBox spacing="14" styleClass="card card-rune" GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <VBox spacing="6" alignment="CENTER">
+                <ImageView fx:id="heroSprite" fitWidth="190" fitHeight="190" preserveRatio="true" />
+                <Label fx:id="heroNameLabel" styleClass="hero-name" />
+                <HBox spacing="6" styleClass="pill">
+                  <Label fx:id="heroClassLabel" styleClass="pill-text" />
+                </HBox>
+                <ProgressBar fx:id="xpBar" prefWidth="260" styleClass="progress-bar" />
+                <Label fx:id="xpLabel" styleClass="muted" />
+              </VBox>
+
+              <GridPane hgap="8" vgap="8">
+                <VBox styleClass="stat-box" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <Label text="STR" styleClass="stat-label" />
+                  <Label fx:id="strLabel" styleClass="stat-value" />
+                </VBox>
+                <VBox styleClass="stat-box" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                  <Label text="STA" styleClass="stat-label" />
+                  <Label fx:id="staLabel" styleClass="stat-value" />
+                </VBox>
+                <VBox styleClass="stat-box" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                  <Label text="VIT" styleClass="stat-label" />
+                  <Label fx:id="vitLabel" styleClass="stat-value" />
+                </VBox>
+                <VBox styleClass="stat-box" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                  <Label text="AGI" styleClass="stat-label" />
+                  <Label fx:id="agiLabel" styleClass="stat-value" />
+                </VBox>
+              </GridPane>
+
+              <VBox spacing="8">
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                  <Label text="HP" styleClass="muted" />
+                  <ProgressBar fx:id="hpBar" prefWidth="200" styleClass="hp-bar" />
+                  <Label fx:id="hpLabel" styleClass="muted" />
+                </HBox>
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                  <Label text="MP" styleClass="muted" />
+                  <ProgressBar fx:id="mpBar" prefWidth="200" styleClass="mp-bar" />
+                  <Label fx:id="mpLabel" styleClass="muted" />
+                </HBox>
+              </VBox>
+            </VBox>
+
+            <VBox spacing="18" GridPane.columnIndex="1" GridPane.rowIndex="0">
+              <VBox spacing="10" styleClass="card card-rune">
+                <HBox alignment="CENTER_LEFT">
+                  <Label text="ACTIVE QUEST" styleClass="card-title" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button text="View all" onAction="#onViewAllQuests" styleClass="link-button" />
+                </HBox>
+                <Label fx:id="questTitleLabel" styleClass="quest-title" />
+                <Label fx:id="questDescLabel" styleClass="muted" wrapText="true" />
+                <ProgressBar fx:id="questProgress" prefWidth="520" />
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                  <Label fx:id="questProgressLabel" styleClass="muted" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="questRewardLabel" styleClass="reward-label" />
+                  <Button fx:id="questClaimButton" text="Claim" onAction="#onClaimQuest" styleClass="primary-button" />
+                </HBox>
+              </VBox>
+
+              <GridPane hgap="12" vgap="12">
+                <columnConstraints>
+                  <ColumnConstraints hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+
+                <Button onAction="#onQuickWorkout" styleClass="action-card" contentDisplay="GRAPHIC_ONLY" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <graphic>
+                    <VBox spacing="6">
+                      <Label text="TODAY" styleClass="eyebrow" />
+                      <Label text="Start a workout" />
+                    </VBox>
+                  </graphic>
+                </Button>
+                <Button onAction="#onQuickNutrition" styleClass="action-card" contentDisplay="GRAPHIC_ONLY" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                  <graphic>
+                    <VBox spacing="6">
+                      <Label text="FUEL" styleClass="eyebrow" />
+                      <Label text="Log a meal" />
+                    </VBox>
+                  </graphic>
+                </Button>
+                <Button onAction="#onQuickQuests" styleClass="action-card" contentDisplay="GRAPHIC_ONLY" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                  <graphic>
+                    <VBox spacing="6">
+                      <Label text="REWARD" styleClass="eyebrow" />
+                      <Label text="Claim quests" />
+                    </VBox>
+                  </graphic>
+                </Button>
+              </GridPane>
+
+              <VBox spacing="12" styleClass="card card-rune">
+                <Label text="TODAY'S NUTRITION" styleClass="card-title" />
+                <HBox spacing="18" alignment="CENTER_LEFT">
+                  <VBox spacing="6" alignment="CENTER">
+                    <ProgressIndicator fx:id="proteinRing" prefWidth="90" prefHeight="90" styleClass="macro-ring macro-protein" />
+                    <Label fx:id="proteinValueLabel" styleClass="muted" />
+                    <Label text="PROTEIN" styleClass="eyebrow" />
+                  </VBox>
+                  <VBox spacing="6" alignment="CENTER">
+                    <ProgressIndicator fx:id="carbsRing" prefWidth="90" prefHeight="90" styleClass="macro-ring macro-carbs" />
+                    <Label fx:id="carbsValueLabel" styleClass="muted" />
+                    <Label text="CARBS" styleClass="eyebrow" />
+                  </VBox>
+                  <VBox spacing="6" alignment="CENTER">
+                    <ProgressIndicator fx:id="fatRing" prefWidth="90" prefHeight="90" styleClass="macro-ring macro-fat" />
+                    <Label fx:id="fatValueLabel" styleClass="muted" />
+                    <Label text="FAT" styleClass="eyebrow" />
+                  </VBox>
+                  <VBox spacing="6" alignment="CENTER">
+                    <Label text="CALORIES" styleClass="eyebrow" />
+                    <Label fx:id="caloriesLabel" styleClass="calorie-value" />
+                  </VBox>
+                </HBox>
+              </VBox>
+            </VBox>
+
+            <VBox spacing="16" GridPane.columnIndex="2" GridPane.rowIndex="0">
+              <VBox spacing="10" styleClass="card card-rune">
+                <Label text="RECENT GAINS" styleClass="card-title" />
+                <VBox fx:id="recentGainsBox" spacing="6" />
+              </VBox>
+              <VBox spacing="10" styleClass="card card-rune">
+                <Label text="PARTY" styleClass="card-title" />
+                <VBox fx:id="partyBox" spacing="10" />
+              </VBox>
+            </VBox>
+          </GridPane>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </center>
+</BorderPane>

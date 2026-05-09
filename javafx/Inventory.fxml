@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="InventoryController" styleClass="app-root">
+  <left>
+    <fx:include source="Nav.fxml" fx:id="nav" />
+  </left>
+  <center>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+      <content>
+        <VBox spacing="16" styleClass="content">
+          <Label text="Inventory" styleClass="page-title" />
+          <Label fx:id="goldLabel" styleClass="muted" />
+          <TilePane fx:id="gearPane" hgap="12" vgap="12" prefColumns="4" />
+        </VBox>
+      </content>
+    </ScrollPane>
+  </center>
+</BorderPane>

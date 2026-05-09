@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="NutritionGoalsController" styleClass="app-root">
+  <left>
+    <fx:include source="Nav.fxml" fx:id="nav" />
+  </left>
+  <center>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+      <content>
+        <VBox spacing="16" styleClass="content">
+          <Label text="Nutrition Goals" styleClass="page-title" />
+          <HBox spacing="10">
+            <Button text="Today" onAction="#onTabToday" styleClass="ghost-button" />
+            <Button text="Log" onAction="#onTabLog" styleClass="ghost-button" />
+            <Button text="Goals" onAction="#onTabGoals" styleClass="ghost-button" />
+            <Button text="Post-workout" onAction="#onTabPost" styleClass="ghost-button" />
+          </HBox>
+          <VBox spacing="10" styleClass="card">
+            <Label text="Update daily targets" styleClass="section-title" />
+            <GridPane hgap="12" vgap="10">
+              <Label text="Calories" styleClass="muted" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+              <TextField fx:id="kcalField" styleClass="input" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+              <Label text="Protein" styleClass="muted" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+              <TextField fx:id="proteinField" styleClass="input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+              <Label text="Carbs" styleClass="muted" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+              <TextField fx:id="carbsField" styleClass="input" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+              <Label text="Fat" styleClass="muted" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+              <TextField fx:id="fatField" styleClass="input" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </GridPane>
+            <Button text="Save goals" onAction="#onSave" styleClass="primary-button" />
+            <Label fx:id="statusLabel" styleClass="muted" />
+          </VBox>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </center>
+</BorderPane>
