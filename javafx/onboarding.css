@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Press Start 2P";
-  src: url("fonts/PressStart2P-Regular.ttf");
+  font-family: "Pixel Square Bold10";
+  src: url("fonts/Pixel%20Square%20Bold10.ttf");
 }
 
 .onboarding-root {
@@ -10,7 +10,7 @@
   -fx-background-size: cover;
   -fx-padding: 40 16 40 16;
   -fx-alignment: center;
-  -fx-font-family: "Press Start 2P";
+  -fx-font-family: "Pixel Square Bold10";
   -fx-text-fill: #f6e9d5;
 }
 

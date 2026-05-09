@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
   @Override
   public void start(Stage stage) throws Exception {
-    Path fontPath = Paths.get("..", "javafx", "fonts", "PressStart2P-Regular.ttf")
+    Path fontPath = Paths.get("..", "javafx", "fonts", "Pixel Square Bold10.ttf")
         .toAbsolutePath()
         .normalize();
     if (Files.exists(fontPath)) {
