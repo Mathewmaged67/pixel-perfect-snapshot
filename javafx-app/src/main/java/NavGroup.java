@@ -1,0 +1,9 @@
+public enum NavGroup {
+  DASHBOARD,
+  WORKOUT,
+  NUTRITION,
+  QUESTS,
+  INVENTORY,
+  PROFILE,
+  NONE
+}
