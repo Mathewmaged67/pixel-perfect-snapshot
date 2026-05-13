@@ -1,4 +1,5 @@
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.EnumMap;
@@ -28,7 +29,11 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.PixelWriter;
+import javafx.scene.image.WritableImage;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import javafx.util.StringConverter;
 
@@ -45,6 +50,7 @@ public class OnboardingController implements Initializable, AppController {
       int weeklyTarget
   ) {}
 
+  @FXML private StackPane root;
   @FXML private Region overlay;
   @FXML private Region progressTrack;
   @FXML private Region progressFill;
@@ -56,6 +62,8 @@ public class OnboardingController implements Initializable, AppController {
   @FXML private TextField targetField;
   @FXML private ImageView spriteViewMain;
   @FXML private ImageView spriteViewFinal;
+  @FXML private ImageView sunIcon;
+  @FXML private ImageView moonIcon;
   @FXML private ToggleGroup genderGroup;
   @FXML private ToggleGroup classGroup;
   @FXML private ToggleButton maleToggle;
@@ -67,6 +75,7 @@ public class OnboardingController implements Initializable, AppController {
   @FXML private Button backButton;
   @FXML private Button nextButton;
   @FXML private Button finishButton;
+  @FXML private Button themeToggle;
 
   private final IntegerProperty step = new SimpleIntegerProperty(0);
   private final StringProperty heroName = new SimpleStringProperty("");
@@ -77,6 +86,8 @@ public class OnboardingController implements Initializable, AppController {
   private final IntegerProperty weeklyTarget = new SimpleIntegerProperty(4);
   private final ObjectProperty<Consumer<HeroProfile>> onComplete = new SimpleObjectProperty<>();
   private final EnumMap<CharacterClass, Image> spriteSheets = new EnumMap<>(CharacterClass.class);
+  private Image warriorMaleOverride;
+  private Image warriorFemaleOverride;
   private Path assetRoot;
   private Router router;
   private AppState appState;
@@ -142,6 +153,12 @@ public class OnboardingController implements Initializable, AppController {
 
     applyIdleBob(spriteViewMain);
     applyIdleBob(spriteViewFinal);
+
+    sunIcon.setImage(createSunIcon());
+    sunIcon.setSmooth(false);
+    moonIcon.setImage(createMoonIcon());
+    moonIcon.setSmooth(false);
+    updateThemeToggle();
   }
 
   @FXML
@@ -175,6 +192,19 @@ public class OnboardingController implements Initializable, AppController {
   @Override
   public void setAppState(AppState appState) {
     this.appState = appState;
+    applyTheme();
+    updateThemeToggle();
+  }
+
+  @FXML
+  private void onToggleTheme() {
+    if (appState == null) {
+      return;
+    }
+    String nextTheme = "light".equalsIgnoreCase(appState.getUi().getTheme()) ? "dark" : "light";
+    appState.getUi().setTheme(nextTheme);
+    applyTheme();
+    updateThemeToggle();
   }
 
   private void finish() {
@@ -215,6 +245,30 @@ public class OnboardingController implements Initializable, AppController {
     node.managedProperty().bind(node.visibleProperty());
   }
 
+  private void applyTheme() {
+    if (root == null || appState == null) {
+      return;
+    }
+    root.getStyleClass().removeAll("theme-dark", "theme-light");
+    if ("light".equalsIgnoreCase(appState.getUi().getTheme())) {
+      root.getStyleClass().add("theme-light");
+    } else {
+      root.getStyleClass().add("theme-dark");
+    }
+  }
+
+  private void updateThemeToggle() {
+    boolean isLight = appState != null && "light".equalsIgnoreCase(appState.getUi().getTheme());
+    if (sunIcon != null) {
+      sunIcon.setVisible(isLight);
+      sunIcon.setManaged(isLight);
+    }
+    if (moonIcon != null) {
+      moonIcon.setVisible(!isLight);
+      moonIcon.setManaged(!isLight);
+    }
+  }
+
   private Gender readGender(Toggle toggle) {
     if (toggle == null || toggle.getUserData() == null) {
       return null;
@@ -234,6 +288,16 @@ public class OnboardingController implements Initializable, AppController {
     spriteSheets.put(CharacterClass.RANGER, loadImage(assetRoot.resolve("sprites/ranger.png")));
     spriteSheets.put(CharacterClass.MAGE, loadImage(assetRoot.resolve("sprites/mage.png")));
     spriteSheets.put(CharacterClass.PALADIN, loadImage(assetRoot.resolve("sprites/paladin.png")));
+
+    Path warriorMalePath = assetRoot.resolve("sprites/warrior-male.png");
+    if (Files.exists(warriorMalePath)) {
+      warriorMaleOverride = loadImage(warriorMalePath);
+    }
+
+    Path warriorFemalePath = assetRoot.resolve("sprites/warrior-female.png");
+    if (Files.exists(warriorFemalePath)) {
+      warriorFemaleOverride = loadImage(warriorFemalePath);
+    }
   }
 
   private Image loadImage(Path path) {
@@ -246,6 +310,28 @@ public class OnboardingController implements Initializable, AppController {
   }
 
   private void updateSprite(ImageView view, double size) {
+    if (characterClass.get() == CharacterClass.WARRIOR) {
+      if (gender.get() == Gender.MALE
+          && warriorMaleOverride != null
+          && !warriorMaleOverride.isError()) {
+        view.setImage(warriorMaleOverride);
+        view.setViewport(null);
+        view.setFitWidth(size);
+        view.setFitHeight(size);
+        return;
+      }
+
+      if (gender.get() == Gender.FEMALE
+          && warriorFemaleOverride != null
+          && !warriorFemaleOverride.isError()) {
+        view.setImage(warriorFemaleOverride);
+        view.setViewport(null);
+        view.setFitWidth(size);
+        view.setFitHeight(size);
+        return;
+      }
+    }
+
     Image sheet = spriteSheets.get(characterClass.get());
     if (sheet == null || sheet.isError()) {
       return;
@@ -259,6 +345,77 @@ public class OnboardingController implements Initializable, AppController {
     view.setViewport(new Rectangle2D(panelWidth * genderIndex, 0, panelWidth, panelHeight));
     view.setFitWidth(size);
     view.setFitHeight(size);
+  }
+
+  private Image createSunIcon() {
+    int size = 12;
+    WritableImage image = new WritableImage(size, size);
+    PixelWriter writer = image.getPixelWriter();
+    Color base = Color.web("#f3ba25");
+    Color highlight = Color.web("#ffd56a");
+
+    fillRect(writer, 4, 4, 4, 4, base);
+    fillRect(writer, 5, 5, 2, 2, highlight);
+
+    fillRect(writer, 5, 0, 2, 2, base);
+    fillRect(writer, 5, 10, 2, 2, base);
+    fillRect(writer, 0, 5, 2, 2, base);
+    fillRect(writer, 10, 5, 2, 2, base);
+    fillRect(writer, 1, 1, 2, 2, base);
+    fillRect(writer, 9, 1, 2, 2, base);
+    fillRect(writer, 1, 9, 2, 2, base);
+    fillRect(writer, 9, 9, 2, 2, base);
+
+    return image;
+  }
+
+  private Image createMoonIcon() {
+    if (assetRoot != null) {
+      Path moonPath = assetRoot.resolve("theme-moon.png");
+      if (Files.exists(moonPath)) {
+        return loadImage(moonPath);
+      }
+    }
+
+    int size = 12;
+    WritableImage image = new WritableImage(size, size);
+    PixelWriter writer = image.getPixelWriter();
+    Color base = Color.web("#f6e9d5");
+
+    int cx = 5;
+    int cy = 6;
+    int radius = 5;
+    int cutCx = 7;
+    int cutCy = 6;
+    int cutRadius = 4;
+
+    for (int y = 0; y < size; y++) {
+      for (int x = 0; x < size; x++) {
+        double dist = Math.hypot(x - cx, y - cy);
+        if (dist <= radius) {
+          writer.setColor(x, y, base);
+        }
+      }
+    }
+
+    for (int y = 0; y < size; y++) {
+      for (int x = 0; x < size; x++) {
+        double dist = Math.hypot(x - cutCx, y - cutCy);
+        if (dist <= cutRadius) {
+          writer.setColor(x, y, Color.TRANSPARENT);
+        }
+      }
+    }
+
+    return image;
+  }
+
+  private void fillRect(PixelWriter writer, int startX, int startY, int width, int height, Color color) {
+    for (int y = startY; y < startY + height; y++) {
+      for (int x = startX; x < startX + width; x++) {
+        writer.setColor(x, y, color);
+      }
+    }
   }
 
   private TextFormatter<Integer> createIntegerFormatter(IntegerProperty target, int min, int max) {

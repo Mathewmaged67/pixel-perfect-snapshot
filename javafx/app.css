@@ -1,22 +1,38 @@
 .root {
   -fx-font-family: "Jersey 10";
+  -fx-font-size: 18px;
   -fx-text-fill: #f6e9d5;
-  -fx-background-color: #151024;
+  -fx-background-color: #10002b;
 }
 
 .app-root {
-  -fx-background-color: linear-gradient(to bottom right, #2a1d4f, #140f24 60%, #0f0b1e);
+  -fx-background-color: #10002b;
   -fx-font-family: "Jersey 10";
   -fx-text-fill: #f6e9d5;
 }
 
 .theme-light {
-  -fx-background-color: #f4efe4;
+  -fx-background-color: #10002b;
+  -fx-text-fill: #f6e9d5;
 }
 
 .theme-light.app-root {
-  -fx-background-color: #f4efe4;
-  -fx-text-fill: #2b2148;
+  -fx-background-color: #10002b;
+  -fx-text-fill: #f6e9d5;
+}
+
+.button {
+  -fx-background-color: #f3ba25;
+  -fx-text-fill: #120d26;
+}
+
+.button:hover {
+  -fx-background-color: rgba(243, 186, 37, 0.90);
+}
+
+.button:default {
+  -fx-background-color: #f3ba25;
+  -fx-text-fill: #120d26;
 }
 
 .sidebar {
@@ -29,13 +45,13 @@
 }
 
 .theme-light .sidebar {
-  -fx-background-color: #efe7d5;
-  -fx-border-color: #d8cbb1;
+  -fx-background-color: #10002b;
+  -fx-border-color: #2f264c;
 }
 
 .sidebar-title {
   -fx-text-fill: #f3ba25;
-  -fx-font-size: 16;
+  -fx-font-size: 18;
 }
 
 .sidebar-button {
@@ -56,20 +72,21 @@
 }
 
 .theme-light .sidebar-button {
-  -fx-text-fill: #2b2148;
+  -fx-text-fill: #d7c9b4;
 }
 
 .theme-light .sidebar-button:hover {
-  -fx-background-color: #d8cbb1;
+  -fx-background-color: #2b2148;
 }
 
 .theme-light .sidebar-button-active {
-  -fx-background-color: #f3ba25;
-  -fx-text-fill: #2b2148;
+  -fx-background-color: #3a2a63;
+  -fx-text-fill: #f3ba25;
 }
 
 .content {
   -fx-padding: 24;
+  -fx-background-color: #10002b;
 }
 
 .content-scroll {
@@ -80,6 +97,15 @@
   -fx-background-color: transparent;
 }
 
+.scroll-pane {
+  -fx-background-color: #10002b;
+  -fx-background: #10002b;
+}
+
+.scroll-pane > .viewport {
+  -fx-background-color: #10002b;
+}
+
 .page-title {
   -fx-text-fill: #f3ba25;
   -fx-font-size: 20;
@@ -87,18 +113,18 @@
 
 .eyebrow {
   -fx-text-fill: #8e8ba6;
-  -fx-font-size: 9;
+  -fx-font-size: 18;
   -fx-letter-spacing: 1px;
 }
 
 .section-title {
   -fx-text-fill: #f6e9d5;
-  -fx-font-size: 12;
+  -fx-font-size: 18;
 }
 
 .muted {
   -fx-text-fill: #8e8ba6;
-  -fx-font-size: 10;
+  -fx-font-size: 18;
 }
 
 .card {
@@ -115,12 +141,12 @@
 
 .card-title {
   -fx-text-fill: #f3ba25;
-  -fx-font-size: 10;
+  -fx-font-size: 18;
 }
 
 .hero-name {
   -fx-text-fill: #f6e9d5;
-  -fx-font-size: 12;
+  -fx-font-size: 18;
 }
 
 .pill {
@@ -133,7 +159,7 @@
 
 .pill-text {
   -fx-text-fill: #f3ba25;
-  -fx-font-size: 9;
+  -fx-font-size: 18;
 }
 
 .stat-box {
@@ -146,22 +172,22 @@
 
 .stat-label {
   -fx-text-fill: #8e8ba6;
-  -fx-font-size: 8;
+  -fx-font-size: 18;
 }
 
 .stat-value {
   -fx-text-fill: #f6e9d5;
-  -fx-font-size: 12;
+  -fx-font-size: 18;
 }
 
 .quest-title {
   -fx-text-fill: #f6e9d5;
-  -fx-font-size: 12;
+  -fx-font-size: 18;
 }
 
 .reward-label {
   -fx-text-fill: #f3ba25;
-  -fx-font-size: 10;
+  -fx-font-size: 18;
 }
 
 .badge {
@@ -174,17 +200,17 @@
 
 .badge-label {
   -fx-text-fill: #8e8ba6;
-  -fx-font-size: 8;
+  -fx-font-size: 18;
 }
 
 .badge-value {
   -fx-text-fill: #f3ba25;
-  -fx-font-size: 10;
+  -fx-font-size: 18;
 }
 
 .theme-light .card {
-  -fx-background-color: #ffffff;
-  -fx-border-color: #d8cbb1;
+  -fx-background-color: rgba(26, 18, 46, 0.95);
+  -fx-border-color: #3a2a63;
 }
 
 .primary-button {
@@ -196,15 +222,17 @@
 }
 
 .link-button {
-  -fx-background-color: transparent;
-  -fx-text-fill: #8e8ba6;
-  -fx-font-size: 10;
+  -fx-background-color: #f3ba25;
+  -fx-text-fill: #120d26;
+  -fx-font-size: 18;
   -fx-padding: 0;
+  -fx-background-radius: 6;
   -fx-cursor: hand;
 }
 
 .link-button:hover {
-  -fx-text-fill: #f3ba25;
+  -fx-background-color: rgba(243, 186, 37, 0.90);
+  -fx-text-fill: #120d26;
 }
 
 .action-card {
@@ -223,9 +251,10 @@
 }
 
 .ghost-button {
-  -fx-background-color: transparent;
-  -fx-text-fill: #f6e9d5;
+  -fx-background-color: #f3ba25;
+  -fx-text-fill: #120d26;
   -fx-padding: 8 14;
+  -fx-background-radius: 6;
   -fx-cursor: hand;
 }
 
@@ -252,7 +281,7 @@
 
 .list-strong {
   -fx-text-fill: #f6e9d5;
-  -fx-font-size: 10;
+  -fx-font-size: 18;
 }
 
 .input {

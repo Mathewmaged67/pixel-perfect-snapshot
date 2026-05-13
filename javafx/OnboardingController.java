@@ -1,4 +1,5 @@
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.EnumMap;
@@ -29,11 +30,15 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.PixelWriter;
+import javafx.scene.image.WritableImage;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import javafx.util.StringConverter;
 
-public class OnboardingController implements Initializable {
+public class OnboardingController extends BaseController implements Initializable {
   private static final int MAX_STEP = 3;
   private static final int SPRITE_COLUMNS = 3;
 
@@ -67,6 +72,7 @@ public class OnboardingController implements Initializable {
       CharacterClass.PALADIN, new ClassMeta("Paladin", "Balanced fitness")
   );
 
+  @FXML private StackPane root;
   @FXML private Region overlay;
   @FXML private Region progressTrack;
   @FXML private Region progressFill;
@@ -78,6 +84,8 @@ public class OnboardingController implements Initializable {
   @FXML private TextField targetField;
   @FXML private ImageView spriteViewMain;
   @FXML private ImageView spriteViewFinal;
+  @FXML private ImageView sunIcon;
+  @FXML private ImageView moonIcon;
   @FXML private ToggleGroup genderGroup;
   @FXML private ToggleGroup classGroup;
   @FXML private ToggleButton maleToggle;
@@ -89,6 +97,7 @@ public class OnboardingController implements Initializable {
   @FXML private Button backButton;
   @FXML private Button nextButton;
   @FXML private Button finishButton;
+  @FXML private Button themeToggle;
 
   private final IntegerProperty step = new SimpleIntegerProperty(0);
   private final StringProperty heroName = new SimpleStringProperty("");
@@ -162,6 +171,30 @@ public class OnboardingController implements Initializable {
 
     applyIdleBob(spriteViewMain);
     applyIdleBob(spriteViewFinal);
+
+    sunIcon.setImage(createSunIcon());
+    sunIcon.setSmooth(false);
+    moonIcon.setImage(createMoonIcon());
+    moonIcon.setSmooth(false);
+    updateThemeToggle();
+  }
+
+  @Override
+  public void setAppState(AppState appState) {
+    super.setAppState(appState);
+    applyTheme();
+    updateThemeToggle();
+  }
+
+  @FXML
+  private void onToggleTheme() {
+    if (appState == null) {
+      return;
+    }
+    String nextTheme = "light".equalsIgnoreCase(appState.getUi().getTheme()) ? "dark" : "light";
+    appState.getUi().setTheme(nextTheme);
+    applyTheme();
+    updateThemeToggle();
   }
 
   @FXML
@@ -203,6 +236,30 @@ public class OnboardingController implements Initializable {
       handler.accept(profile);
     } else {
       System.out.println("Onboarding complete: " + profile);
+    }
+  }
+
+  private void applyTheme() {
+    if (root == null || appState == null) {
+      return;
+    }
+    root.getStyleClass().removeAll("theme-dark", "theme-light");
+    if ("light".equalsIgnoreCase(appState.getUi().getTheme())) {
+      root.getStyleClass().add("theme-light");
+    } else {
+      root.getStyleClass().add("theme-dark");
+    }
+  }
+
+  private void updateThemeToggle() {
+    boolean isLight = appState != null && "light".equalsIgnoreCase(appState.getUi().getTheme());
+    if (sunIcon != null) {
+      sunIcon.setVisible(isLight);
+      sunIcon.setManaged(isLight);
+    }
+    if (moonIcon != null) {
+      moonIcon.setVisible(!isLight);
+      moonIcon.setManaged(!isLight);
     }
   }
 
@@ -255,6 +312,77 @@ public class OnboardingController implements Initializable {
     view.setViewport(new Rectangle2D(panelWidth * genderIndex, 0, panelWidth, panelHeight));
     view.setFitWidth(size);
     view.setFitHeight(size);
+  }
+
+  private Image createSunIcon() {
+    int size = 12;
+    WritableImage image = new WritableImage(size, size);
+    PixelWriter writer = image.getPixelWriter();
+    Color base = Color.web("#f3ba25");
+    Color highlight = Color.web("#ffd56a");
+
+    fillRect(writer, 4, 4, 4, 4, base);
+    fillRect(writer, 5, 5, 2, 2, highlight);
+
+    fillRect(writer, 5, 0, 2, 2, base);
+    fillRect(writer, 5, 10, 2, 2, base);
+    fillRect(writer, 0, 5, 2, 2, base);
+    fillRect(writer, 10, 5, 2, 2, base);
+    fillRect(writer, 1, 1, 2, 2, base);
+    fillRect(writer, 9, 1, 2, 2, base);
+    fillRect(writer, 1, 9, 2, 2, base);
+    fillRect(writer, 9, 9, 2, 2, base);
+
+    return image;
+  }
+
+  private Image createMoonIcon() {
+    if (assetRoot != null) {
+      Path moonPath = assetRoot.resolve("theme-moon.png");
+      if (Files.exists(moonPath)) {
+        return loadImage(moonPath);
+      }
+    }
+
+    int size = 12;
+    WritableImage image = new WritableImage(size, size);
+    PixelWriter writer = image.getPixelWriter();
+    Color base = Color.web("#f6e9d5");
+
+    int cx = 5;
+    int cy = 6;
+    int radius = 5;
+    int cutCx = 7;
+    int cutCy = 6;
+    int cutRadius = 4;
+
+    for (int y = 0; y < size; y++) {
+      for (int x = 0; x < size; x++) {
+        double dist = Math.hypot(x - cx, y - cy);
+        if (dist <= radius) {
+          writer.setColor(x, y, base);
+        }
+      }
+    }
+
+    for (int y = 0; y < size; y++) {
+      for (int x = 0; x < size; x++) {
+        double dist = Math.hypot(x - cutCx, y - cutCy);
+        if (dist <= cutRadius) {
+          writer.setColor(x, y, Color.TRANSPARENT);
+        }
+      }
+    }
+
+    return image;
+  }
+
+  private void fillRect(PixelWriter writer, int startX, int startY, int width, int height, Color color) {
+    for (int y = startY; y < startY + height; y++) {
+      for (int x = startX; x < startX + width; x++) {
+        writer.setColor(x, y, color);
+      }
+    }
   }
 
   private TextFormatter<Integer> createIntegerFormatter(IntegerProperty target, int min, int max) {

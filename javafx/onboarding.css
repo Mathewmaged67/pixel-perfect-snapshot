@@ -24,7 +24,7 @@
 
 .title {
   -fx-text-fill: #f3ba25;
-  -fx-font-size: 16;
+  -fx-font-size: 18;
 }
 
 .title-large {
@@ -38,7 +38,7 @@
 
 .step-label {
   -fx-text-fill: #8e8ba6;
-  -fx-font-size: 10;
+  -fx-font-size: 18;
 }
 
 .progress-track {
@@ -58,12 +58,12 @@
 
 .field-label {
   -fx-text-fill: #f6e9d5;
-  -fx-font-size: 12;
+  -fx-font-size: 18;
 }
 
 .muted-text {
   -fx-text-fill: #8e8ba6;
-  -fx-font-size: 12;
+  -fx-font-size: 18;
 }
 
 .input-field {
@@ -74,7 +74,7 @@
   -fx-text-fill: #f6e9d5;
   -fx-prompt-text-fill: #8e8ba6;
   -fx-padding: 6 12;
-  -fx-font-size: 14;
+  -fx-font-size: 18;
 }
 
 .input-field:focused {
@@ -89,8 +89,10 @@
   -fx-border-insets: 0;
   -fx-border-width: 1;
   -fx-border-color: transparent;
+  -fx-background-color: #f3ba25;
+  -fx-text-fill: #120d26;
   -fx-padding: 8 16;
-  -fx-font-size: 14;
+  -fx-font-size: 18;
   -fx-font-weight: normal;
   -fx-min-height: 36;
   -fx-cursor: hand;
@@ -100,6 +102,14 @@
 .btn:focused {
   -fx-border-color: #f3ba25;
   -fx-effect: dropshadow(gaussian, rgba(243, 186, 37, 0.35), 8, 0.3, 0, 0);
+}
+
+.btn:default,
+.btn-primary:default,
+.btn-ghost:default,
+.btn-gold:default {
+  -fx-background-color: #f3ba25;
+  -fx-text-fill: #120d26;
 }
 
 .btn-primary {
@@ -112,14 +122,14 @@
 }
 
 .btn-ghost {
-  -fx-background-color: transparent;
-  -fx-text-fill: #f6e9d5;
+  -fx-background-color: #f3ba25;
+  -fx-text-fill: #120d26;
   -fx-effect: none;
 }
 
 .btn-ghost:hover {
-  -fx-background-color: #392c67;
-  -fx-text-fill: #f6e9d5;
+  -fx-background-color: rgba(243, 186, 37, 0.90);
+  -fx-text-fill: #120d26;
 }
 
 .btn-gold {
@@ -131,6 +141,40 @@
   -fx-opacity: 0.9;
 }
 
+.theme-toggle {
+  -fx-background-color: rgba(16, 8, 33, 0.85);
+  -fx-border-color: #f3ba25;
+  -fx-border-width: 1;
+  -fx-border-radius: 6;
+  -fx-background-radius: 6;
+  -fx-padding: 0;
+  -fx-min-width: 36;
+  -fx-min-height: 36;
+  -fx-pref-width: 36;
+  -fx-pref-height: 36;
+  -fx-max-width: 36;
+  -fx-max-height: 36;
+  -fx-cursor: hand;
+}
+
+.theme-toggle:hover {
+  -fx-background-color: rgba(36, 28, 67, 0.95);
+  -fx-effect: dropshadow(gaussian, rgba(243, 186, 37, 0.35), 8, 0.3, 0, 0);
+}
+
+.theme-toggle:focused {
+  -fx-border-color: #f3ba25;
+  -fx-effect: dropshadow(gaussian, rgba(243, 186, 37, 0.45), 8, 0.3, 0, 0);
+}
+
+.theme-icon {
+  -fx-effect: dropshadow(gaussian, rgba(243, 186, 37, 0.55), 6, 0.4, 0, 0);
+}
+
+.theme-icon-moon {
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.45), 6, 0.35, 0, 0);
+}
+
 .toggle-pill {
   -fx-background-color: transparent;
   -fx-border-color: #382e63;
@@ -138,7 +182,7 @@
   -fx-background-radius: 6;
   -fx-text-fill: #8e8ba6;
   -fx-padding: 6 12;
-  -fx-font-size: 12;
+  -fx-font-size: 18;
   -fx-cursor: hand;
 }
 
@@ -172,17 +216,17 @@
 
 .class-title {
   -fx-text-fill: #f6e9d5;
-  -fx-font-size: 12;
+  -fx-font-size: 18;
 }
 
 .class-tagline {
   -fx-text-fill: #8e8ba6;
-  -fx-font-size: 10;
+  -fx-font-size: 18;
 }
 
 .class-icon {
   -fx-text-fill: #8e8ba6;
-  -fx-font-size: 16;
+  -fx-font-size: 18;
   -fx-background-color: #2e274e;
   -fx-background-radius: 6;
   -fx-padding: 6 8;

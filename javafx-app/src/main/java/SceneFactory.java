@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 
 public class SceneFactory {
   private final AppState appState;
@@ -32,10 +33,11 @@ public class SceneFactory {
     }
 
     Scene scene = new Scene(root, route.getWidth(), route.getHeight());
+    scene.setFill(Color.web("#10002b"));
     if (Files.exists(appCss)) {
       scene.getStylesheets().add(appCss.toUri().toString());
     }
-    root.setStyle("-fx-font-family: 'Jersey 10';");
+    root.setStyle("-fx-font-family: 'Jersey 10'; -fx-font-size: 18px;");
     if ("light".equalsIgnoreCase(appState.getUi().getTheme())) {
       root.getStyleClass().add("theme-light");
     } else {

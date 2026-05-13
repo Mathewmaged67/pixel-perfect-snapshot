@@ -11,6 +11,16 @@ public final class SpriteUtil {
     if (view == null || character == null) {
       return;
     }
+
+    Image override = AssetManager.getSpriteOverride(character.getCharacterClass(), character.getGender());
+    if (override != null && !override.isError()) {
+      view.setImage(override);
+      view.setViewport(null);
+      view.setFitWidth(size);
+      view.setFitHeight(size);
+      return;
+    }
+
     Image sheet = AssetManager.getSpriteSheet(character.getCharacterClass());
     if (sheet == null || sheet.isError()) {
       return;

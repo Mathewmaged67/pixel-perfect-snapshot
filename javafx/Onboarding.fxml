@@ -34,6 +34,14 @@
                 <Label text="Forge your hero" styleClass="title"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <Label fx:id="stepLabel" styleClass="step-label"/>
+                <Button fx:id="themeToggle" onAction="#onToggleTheme" styleClass="theme-toggle" focusTraversable="false" accessibleText="Toggle theme">
+                    <graphic>
+                        <StackPane>
+                            <ImageView fx:id="sunIcon" fitWidth="18" fitHeight="18" preserveRatio="true" smooth="false" styleClass="theme-icon" />
+                            <ImageView fx:id="moonIcon" fitWidth="36" fitHeight="36" preserveRatio="true" smooth="false" styleClass="theme-icon theme-icon-moon" />
+                        </StackPane>
+                    </graphic>
+                </Button>
             </HBox>
 
             <StackPane fx:id="progressTrack" styleClass="progress-track" minHeight="4" maxHeight="4">
