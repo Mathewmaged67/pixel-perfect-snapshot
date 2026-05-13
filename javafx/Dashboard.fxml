@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="DashboardController" styleClass="app-root">
@@ -57,37 +58,33 @@
                 <Label fx:id="xpLabel" styleClass="muted" />
               </VBox>
 
-              <GridPane hgap="8" vgap="8">
-                <VBox styleClass="stat-box" GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                  <ColumnConstraints hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <rowConstraints>
+                  <RowConstraints vgrow="ALWAYS" />
+                  <RowConstraints vgrow="ALWAYS" />
+                </rowConstraints>
+
+                <VBox spacing="2" alignment="CENTER" maxWidth="Infinity" styleClass="stat-box stat-box-large" GridPane.columnIndex="0" GridPane.rowIndex="0">
                   <Label text="STR" styleClass="stat-label" />
                   <Label fx:id="strLabel" styleClass="stat-value" />
                 </VBox>
-                <VBox styleClass="stat-box" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <VBox spacing="2" alignment="CENTER" maxWidth="Infinity" styleClass="stat-box stat-box-large" GridPane.columnIndex="1" GridPane.rowIndex="0">
                   <Label text="STA" styleClass="stat-label" />
                   <Label fx:id="staLabel" styleClass="stat-value" />
                 </VBox>
-                <VBox styleClass="stat-box" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <VBox spacing="2" alignment="CENTER" maxWidth="Infinity" styleClass="stat-box stat-box-large" GridPane.columnIndex="0" GridPane.rowIndex="1">
                   <Label text="VIT" styleClass="stat-label" />
                   <Label fx:id="vitLabel" styleClass="stat-value" />
                 </VBox>
-                <VBox styleClass="stat-box" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                <VBox spacing="2" alignment="CENTER" maxWidth="Infinity" styleClass="stat-box stat-box-large" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   <Label text="AGI" styleClass="stat-label" />
                   <Label fx:id="agiLabel" styleClass="stat-value" />
                 </VBox>
               </GridPane>
-
-              <VBox spacing="8">
-                <HBox spacing="8" alignment="CENTER_LEFT">
-                  <Label text="HP" styleClass="muted" />
-                  <ProgressBar fx:id="hpBar" prefWidth="200" styleClass="hp-bar" />
-                  <Label fx:id="hpLabel" styleClass="muted" />
-                </HBox>
-                <HBox spacing="8" alignment="CENTER_LEFT">
-                  <Label text="MP" styleClass="muted" />
-                  <ProgressBar fx:id="mpBar" prefWidth="200" styleClass="mp-bar" />
-                  <Label fx:id="mpLabel" styleClass="muted" />
-                </HBox>
-              </VBox>
             </VBox>
 
             <VBox spacing="18" GridPane.columnIndex="1" GridPane.rowIndex="0">

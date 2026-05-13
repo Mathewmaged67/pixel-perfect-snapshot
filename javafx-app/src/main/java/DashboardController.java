@@ -19,10 +19,6 @@ public class DashboardController extends BaseController {
   @FXML private ImageView heroSprite;
   @FXML private ProgressBar xpBar;
   @FXML private Label xpLabel;
-  @FXML private ProgressBar hpBar;
-  @FXML private ProgressBar mpBar;
-  @FXML private Label hpLabel;
-  @FXML private Label mpLabel;
   @FXML private Label strLabel;
   @FXML private Label staLabel;
   @FXML private Label vitLabel;
@@ -109,11 +105,6 @@ public class DashboardController extends BaseController {
     double xpProgress = character.getXpToNext() == 0 ? 0 : (double) character.getXp() / character.getXpToNext();
     xpBar.setProgress(xpProgress);
     xpLabel.setText(character.getXp() + " / " + character.getXpToNext() + " XP");
-
-    hpBar.setProgress(character.getHpMax() == 0 ? 0 : (double) character.getHp() / character.getHpMax());
-    mpBar.setProgress(character.getMpMax() == 0 ? 0 : (double) character.getMp() / character.getMpMax());
-    hpLabel.setText(character.getHp() + "/" + character.getHpMax());
-    mpLabel.setText(character.getMp() + "/" + character.getMpMax());
 
     strLabel.setText(String.valueOf(character.getStats().getOrDefault(StatKey.STR, 0)));
     staLabel.setText(String.valueOf(character.getStats().getOrDefault(StatKey.STA, 0)));

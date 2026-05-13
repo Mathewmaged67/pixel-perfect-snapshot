@@ -170,6 +170,13 @@
   -fx-padding: 6 8;
 }
 
+.stat-box-large {
+  -fx-alignment: center;
+  -fx-min-width: 110;
+  -fx-min-height: 60;
+  -fx-padding: 10 12;
+}
+
 .stat-label {
   -fx-text-fill: #8e8ba6;
   -fx-font-size: 18;
@@ -178,6 +185,14 @@
 .stat-value {
   -fx-text-fill: #f6e9d5;
   -fx-font-size: 18;
+}
+
+.stat-box-large .stat-label {
+  -fx-font-size: 20;
+}
+
+.stat-box-large .stat-value {
+  -fx-font-size: 22;
 }
 
 .quest-title {
@@ -308,6 +323,12 @@
 
 .mp-bar {
   -fx-accent: #6b79ff;
+}
+
+.hero-bar {
+  -fx-pref-height: 16;
+  -fx-min-height: 16;
+  -fx-max-height: 16;
 }
 
 .tag {
