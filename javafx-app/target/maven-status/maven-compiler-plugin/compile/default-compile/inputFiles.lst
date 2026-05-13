@@ -1,111 +1,111 @@
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\models\Achievement.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\utils\NumberUtils.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\NavGroup.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\utils\ValidationUtils.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\enums\HabitCategory.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\networking\ProtocolHandler.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\WorkoutXp.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\enums\WorkoutType.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\repositories\QuestRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\models\User.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\AppController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\QuestsController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\SpriteUtil.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\managers\AchievementManager.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\charts\StreakChartService.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\Quest.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\networking\LeaderboardClient.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\IdUtil.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\repositories\CharacterRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\MuscleGroup.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\Route.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\NutritionState.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\NavController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\RestTimerDialog.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\WorkoutActiveController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\repositories\WorkoutRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\FormatUtil.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\enums\QuestDifficulty.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\models\XpLog.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\NutritionTodayController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\CharacterClass.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\WorkoutState.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\models\Character.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\Rarity.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\MainApp.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\exceptions\EntityNotFoundException.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\WorkoutSession.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\interfaces\IXpService.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\app\LifeXPApplication.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\managers\HabitManager.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\SeedData.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\interfaces\IWorkoutService.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\NutritionTotals.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\repositories\UserRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\charts\XpChartService.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\utils\CollectionUtils.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\utils\DateTimeUtils.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\DashboardController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\ExerciseCategory.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\NutritionPostWorkoutController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\XpResult.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\ProfileController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\models\Habit.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\repositories\XpLogRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\FoodLogEntry.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\StatKey.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\threads\LeaderboardRefreshTask.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\managers\WorkoutManager.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\models\LeaderboardEntry.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\WorkoutHistoryController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\InventoryState.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\logic\LevelUpEngine.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\exceptions\InvalidOperationException.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\CharacterState.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\WorkoutSummaryController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\LifeXPBackend.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\repositories\GenericCrudRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\logic\XpCalculationEngine.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\app\AppContext.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\repositories\HabitRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\UiState.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\SetEntry.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\interfaces\IQuestService.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\BaseController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\SessionExercise.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\QuestState.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\managers\QuestManager.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\interfaces\IHabitService.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\models\Workout.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\Food.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\enums\CharacterClass.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\NutritionLogController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\NutritionGoalsController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\models\Quest.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\Exercise.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\repositories\AchievementRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\QuestScope.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\WorkoutIndexController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\interfaces\CrudRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\XpEngine.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\exceptions\ValidationException.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\repositories\LeaderboardRepository.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\OnboardingController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\enums\AchievementType.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\WorkoutTemplatesController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\logic\StreakEngine.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\managers\XpManager.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\threads\BackgroundTaskPool.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\GearItem.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\Gender.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\Router.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\InventoryController.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\SceneFactory.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\interfaces\IAchievementService.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\logic\AchievementEngine.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\threads\WorkoutTimerTask.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\AssetManager.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\charts\WorkoutChartService.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\AppState.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\utils\IdGenerator.java
-C:\Users\MSI\Downloads\pixel-perfect-snapshot-javafx\javafx-app\src\main\java\lifexp\exceptions\LifeXPException.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\AppController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\AppState.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\AssetManager.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\BaseController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\CharacterClass.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\CharacterState.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\DashboardController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\Exercise.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\ExerciseCategory.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\Food.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\FoodLogEntry.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\FormatUtil.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\GearItem.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\Gender.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\IdUtil.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\InventoryController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\InventoryState.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\app\AppContext.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\app\LifeXPApplication.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\charts\StreakChartService.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\charts\WorkoutChartService.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\charts\XpChartService.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\enums\AchievementType.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\enums\CharacterClass.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\enums\HabitCategory.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\enums\QuestDifficulty.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\enums\WorkoutType.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\exceptions\EntityNotFoundException.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\exceptions\InvalidOperationException.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\exceptions\LifeXPException.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\exceptions\ValidationException.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\interfaces\CrudRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\interfaces\IAchievementService.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\interfaces\IHabitService.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\interfaces\IQuestService.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\interfaces\IWorkoutService.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\interfaces\IXpService.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\LifeXPBackend.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\logic\AchievementEngine.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\logic\LevelUpEngine.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\logic\StreakEngine.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\logic\XpCalculationEngine.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\managers\AchievementManager.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\managers\HabitManager.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\managers\QuestManager.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\managers\WorkoutManager.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\managers\XpManager.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\models\Achievement.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\models\Character.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\models\Habit.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\models\LeaderboardEntry.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\models\Quest.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\models\User.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\models\Workout.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\models\XpLog.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\networking\LeaderboardClient.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\networking\ProtocolHandler.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\repositories\AchievementRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\repositories\CharacterRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\repositories\GenericCrudRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\repositories\HabitRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\repositories\LeaderboardRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\repositories\QuestRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\repositories\UserRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\repositories\WorkoutRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\repositories\XpLogRepository.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\threads\BackgroundTaskPool.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\threads\LeaderboardRefreshTask.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\threads\WorkoutTimerTask.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\utils\CollectionUtils.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\utils\DateTimeUtils.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\utils\IdGenerator.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\utils\NumberUtils.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\utils\ValidationUtils.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\MainApp.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\MuscleGroup.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\NavController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\NavGroup.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\NutritionGoalsController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\NutritionLogController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\NutritionPostWorkoutController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\NutritionState.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\NutritionTodayController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\NutritionTotals.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\OnboardingController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\ProfileController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\Quest.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\QuestsController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\QuestScope.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\QuestState.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\Rarity.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\RestTimerDialog.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\Route.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\Router.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SceneFactory.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SeedData.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SessionExercise.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SetEntry.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SpriteUtil.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\StatKey.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\UiState.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\WorkoutActiveController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\WorkoutHistoryController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\WorkoutIndexController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\WorkoutSession.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\WorkoutState.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\WorkoutSummaryController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\WorkoutTemplatesController.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\WorkoutXp.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\XpEngine.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\XpResult.java

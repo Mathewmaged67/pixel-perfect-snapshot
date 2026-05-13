@@ -35,6 +35,7 @@ public class SceneFactory {
     if (Files.exists(appCss)) {
       scene.getStylesheets().add(appCss.toUri().toString());
     }
+    root.setStyle("-fx-font-family: 'Jersey 10';");
     if ("light".equalsIgnoreCase(appState.getUi().getTheme())) {
       root.getStyleClass().add("theme-light");
     } else {

@@ -1,17 +1,12 @@
-@font-face {
-  font-family: "Minecraft";
-  src: url("fonts/Minecraft.ttf");
-}
-
 .root {
-  -fx-font-family: "Minecraft";
+  -fx-font-family: "Jersey 10";
   -fx-text-fill: #f6e9d5;
   -fx-background-color: #151024;
 }
 
 .app-root {
   -fx-background-color: linear-gradient(to bottom right, #2a1d4f, #140f24 60%, #0f0b1e);
-  -fx-font-family: "Minecraft";
+  -fx-font-family: "Jersey 10";
   -fx-text-fill: #f6e9d5;
 }
 
