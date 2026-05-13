@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="ProfileController" fx:id="root" styleClass="app-root">
+  <left>
+    <fx:include source="Nav.fxml" fx:id="nav" />
+  </left>
+  <center>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+      <content>
+        <VBox spacing="16" styleClass="content">
+          <Label text="Profile" styleClass="page-title" />
+          <HBox spacing="16">
+            <VBox spacing="10" styleClass="card" prefWidth="320">
+              <Label fx:id="nameLabel" styleClass="section-title" />
+              <ImageView fx:id="spriteView" fitWidth="180" fitHeight="180" preserveRatio="true" />
+              <Label fx:id="classLabel" styleClass="muted" />
+              <GridPane hgap="12" vgap="6">
+                <Label text="STR" styleClass="muted" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label fx:id="strLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="STA" styleClass="muted" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Label fx:id="staLabel" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <Label text="VIT" styleClass="muted" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="vitLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="AGI" styleClass="muted" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Label fx:id="agiLabel" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+              </GridPane>
+            </VBox>
+
+            <VBox spacing="12" styleClass="card" prefWidth="480">
+              <Label text="Activity Heatmap" styleClass="section-title" />
+              <GridPane fx:id="heatmapGrid" hgap="4" vgap="4" />
+
+              <Label text="Settings" styleClass="section-title" />
+              <HBox spacing="10">
+                <Button text="Dark" onAction="#onThemeDark" styleClass="ghost-button" />
+                <Button text="Light" onAction="#onThemeLight" styleClass="ghost-button" />
+              </HBox>
+              <HBox spacing="10">
+                <Button text="KG" onAction="#onUnitsKg" styleClass="ghost-button" />
+                <Button text="LBS" onAction="#onUnitsLbs" styleClass="ghost-button" />
+              </HBox>
+              <Button text="Reset character" onAction="#onReset" styleClass="primary-button" />
+              <Label fx:id="statusLabel" styleClass="muted" />
+            </VBox>
+          </HBox>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </center>
+</BorderPane>
