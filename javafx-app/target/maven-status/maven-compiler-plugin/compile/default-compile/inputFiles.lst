@@ -1,6 +1,7 @@
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\AppController.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\AppState.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\AssetManager.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\AudioManager.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\BaseController.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\CharacterClass.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\CharacterState.java
@@ -72,6 +73,7 @@ D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\util
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\utils\IdGenerator.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\utils\NumberUtils.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\lifexp\utils\ValidationUtils.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\LoginController.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\MainApp.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\MuscleGroup.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\NavController.java
@@ -96,6 +98,7 @@ D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SceneFactor
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SeedData.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SessionExercise.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SetEntry.java
+D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SignupController.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\SpriteUtil.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\StatKey.java
 D:\Frontend Course\FitQuest\FitQuest_javafx\javafx-app\src\main\java\UiState.java

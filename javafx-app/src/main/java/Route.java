@@ -1,4 +1,6 @@
 public enum Route {
+  LOGIN("Login", "Login.fxml", 1040, 720, NavGroup.NONE),
+  SIGNUP("Create Account", "Signup.fxml", 1040, 720, NavGroup.NONE),
   ONBOARDING("Onboarding", "Onboarding.fxml", 1040, 720, NavGroup.NONE),
   DASHBOARD("Dashboard", "Dashboard.fxml", 1280, 800, NavGroup.DASHBOARD),
   QUESTS("Quests", "Quests.fxml", 1280, 800, NavGroup.QUESTS),

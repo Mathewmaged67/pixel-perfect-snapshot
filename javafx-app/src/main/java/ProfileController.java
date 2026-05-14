@@ -76,6 +76,11 @@ public class ProfileController extends BaseController {
     router.goTo(Route.ONBOARDING);
   }
 
+  @FXML
+  private void onLogout() {
+    router.goTo(Route.LOGIN);
+  }
+
   private void refresh() {
     if (appState == null) {
       return;

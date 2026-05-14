@@ -1,4 +1,5 @@
 import javafx.fxml.FXML;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.geometry.Insets;
@@ -40,6 +41,7 @@ public class DashboardController extends BaseController {
   @FXML private Label streakLabel;
   @FXML private VBox recentGainsBox;
   @FXML private VBox partyBox;
+  private List<PartyMember> partyMembers = new ArrayList<>();
 
   @Override
   public void onNavigatedTo(Route route) {
@@ -89,6 +91,12 @@ public class DashboardController extends BaseController {
     if (router != null) {
       router.goTo(Route.QUESTS);
     }
+  }
+
+  private void onAddPartyMember() {
+    int count = partyMembers.size() + 1;
+    partyMembers.add(new PartyMember("Ally " + count, 1, 100));
+    rebuildParty();
   }
 
   private void refresh() {
@@ -175,21 +183,41 @@ public class DashboardController extends BaseController {
 
   private void rebuildParty() {
     partyBox.getChildren().clear();
-    List<PartyMember> members = List.of(
-        new PartyMember("Mira", 9, 80),
-        new PartyMember("Eldon", 14, 65),
-        new PartyMember("Sora", 7, 92)
-    );
-    for (PartyMember member : members) {
+
+    // Add header with Add button
+    HBox headerBox = new HBox(6);
+    Label title = new Label("PARTY");
+    title.setStyle("-fx-font-size: 10px; -fx-text-fill: #c9b361; -fx-font-weight: bold;");
+    Region spacer = new Region();
+    HBox.setHgrow(spacer, Priority.ALWAYS);
+    Button addButton = new Button("Add");
+    addButton.setStyle("-fx-padding: 4 12 4 12; -fx-font-size: 11px; -fx-text-fill: #c9b361; -fx-border-color: #c9b361; -fx-border-width: 1; -fx-background-color: transparent; -fx-border-radius: 4; -fx-cursor: hand;");
+    addButton.setOnAction(e -> onAddPartyMember());
+    headerBox.getChildren().addAll(title, spacer, addButton);
+    partyBox.getChildren().add(headerBox);
+
+    // Add party members
+    if (partyMembers.isEmpty()) {
+      Label emptyLabel = new Label("No party members yet. Click Add to recruit an ally.");
+      emptyLabel.setStyle("-fx-text-fill: #7a7a7a; -fx-font-size: 11px; -fx-wrap-text: true;");
+      emptyLabel.setWrapText(true);
+      VBox emptyBox = new VBox();
+      emptyBox.setStyle("-fx-padding: 16;");
+      emptyBox.getChildren().add(emptyLabel);
+      partyBox.getChildren().add(emptyBox);
+      return;
+    }
+
+    for (PartyMember member : partyMembers) {
       VBox row = new VBox(4);
       HBox header = new HBox(6);
       Label name = new Label(member.name + " Lv. " + member.level);
       name.getStyleClass().add("muted");
-      Region spacer = new Region();
-      HBox.setHgrow(spacer, Priority.ALWAYS);
+      Region memberSpacer = new Region();
+      HBox.setHgrow(memberSpacer, Priority.ALWAYS);
       Label hpLabel = new Label(member.hp + "/100");
       hpLabel.getStyleClass().add("muted");
-      header.getChildren().addAll(name, spacer, hpLabel);
+      header.getChildren().addAll(name, memberSpacer, hpLabel);
 
       ProgressBar hp = new ProgressBar(member.hp / 100.0);
       hp.getStyleClass().add("hp-bar");

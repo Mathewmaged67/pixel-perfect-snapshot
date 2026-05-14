@@ -403,3 +403,44 @@
 .locked {
   -fx-opacity: 0.6;
 }
+
+/* Login Page Styles */
+.login-root {
+  -fx-background-color: #10002b;
+}
+
+.form-label {
+  -fx-text-fill: #d7c9b4;
+  -fx-font-size: 16;
+}
+
+.form-input {
+  -fx-background-color: #1a1330;
+  -fx-border-color: #3a2a63;
+  -fx-border-radius: 6;
+  -fx-background-radius: 6;
+  -fx-text-fill: #f6e9d5;
+  -fx-prompt-text-fill: #8e8ba6;
+  -fx-padding: 10 12;
+  -fx-font-size: 16;
+}
+
+.form-input:focused {
+  -fx-border-color: #f3ba25;
+  -fx-border-width: 2;
+}
+
+.error-message {
+  -fx-text-fill: #e85b57;
+  -fx-font-size: 14;
+}
+
+.form-hint {
+  -fx-text-fill: #8e8ba6;
+  -fx-font-size: 14;
+}
+
+.subtitle {
+  -fx-text-fill: #d7c9b4;
+  -fx-font-size: 16;
+}

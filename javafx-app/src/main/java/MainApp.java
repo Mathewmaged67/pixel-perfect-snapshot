@@ -31,7 +31,7 @@ public class MainApp extends Application {
     Router router = new Router(stage, sceneFactory);
     sceneFactory.setRouter(router);
 
-    router.goTo(Route.ONBOARDING);
+    router.goTo(Route.LOGIN);
   }
 
   public static void main(String[] args) {

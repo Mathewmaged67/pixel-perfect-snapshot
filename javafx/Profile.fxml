@@ -48,7 +48,10 @@
                 <Button text="KG" onAction="#onUnitsKg" styleClass="ghost-button" />
                 <Button text="LBS" onAction="#onUnitsLbs" styleClass="ghost-button" />
               </HBox>
-              <Button text="Reset character" onAction="#onReset" styleClass="primary-button" />
+              <HBox spacing="10">
+                <Button text="Reset character" onAction="#onReset" styleClass="primary-button" HBox.hgrow="ALWAYS" />
+                <Button text="Log out" onAction="#onLogout" styleClass="primary-button" />
+              </HBox>
               <Label fx:id="statusLabel" styleClass="muted" />
             </VBox>
           </HBox>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="LoginController"
+           stylesheets="@app.css" styleClass="login-root">
+
+    <children>
+        <Region fx:id="overlay" styleClass="hero-overlay" />
+
+        <VBox fx:id="card" styleClass="card" maxWidth="400" spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+
+            <!-- Title -->
+            <Label text="Welcome to FitQuest" styleClass="title" wrapText="true"/>
+            <Label text="Sign in to your account" styleClass="subtitle" wrapText="true"/>
+
+            <!-- Email/Username Field -->
+            <VBox spacing="8">
+                <Label text="Email or Username" styleClass="form-label"/>
+                <TextField fx:id="emailField" 
+                           promptText="Enter your email or username"
+                           styleClass="form-input"/>
+            </VBox>
+
+            <!-- Password Field -->
+            <VBox spacing="8">
+                <Label text="Password" styleClass="form-label"/>
+                <PasswordField fx:id="passwordField" 
+                               promptText="Enter your password"
+                               styleClass="form-input"/>
+            </VBox>
+
+            <!-- Error Message -->
+            <Label fx:id="errorLabel" text="" styleClass="error-message" wrapText="true"/>
+
+            <!-- Login Button -->
+            <Button fx:id="loginButton" 
+                    text="Sign In" 
+                    styleClass="primary-button"
+                    onAction="#onLogin"
+                    maxWidth="Infinity"/>
+
+            <!-- Signup Link -->
+            <VBox spacing="0" alignment="CENTER">
+                <Label text="Don't have an account?" styleClass="form-hint"/>
+                <Button fx:id="signupButton"
+                        text="Create one now"
+                        styleClass="link-button"
+                        onAction="#onSignup"/>
+            </VBox>
+
+        </VBox>
+
+    </children>
+</StackPane>

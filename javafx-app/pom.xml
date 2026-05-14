@@ -9,9 +9,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>25</maven.compiler.source>
-    <maven.compiler.target>25</maven.compiler.target>
+    <maven.compiler.source>26</maven.compiler.source>
+    <maven.compiler.target>26</maven.compiler.target>
     <javafx.version>25.0.3</javafx.version>
+    <javafx.platform>win</javafx.platform>
   </properties>
 
   <dependencies>
@@ -19,11 +20,19 @@
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
       <version>${javafx.version}</version>
+      <classifier>${javafx.platform}</classifier>
     </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>${javafx.version}</version>
+      <classifier>${javafx.platform}</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-media</artifactId>
+      <version>${javafx.version}</version>
+      <classifier>${javafx.platform}</classifier>
     </dependency>
   </dependencies>
 
