@@ -12,6 +12,7 @@
     <Button fx:id="nutritionButton" text="Nutrition" onAction="#onNutrition" styleClass="sidebar-button" />
     <Button fx:id="questsButton" text="Quests" onAction="#onQuests" styleClass="sidebar-button" />
     <Button fx:id="inventoryButton" text="Inventory" onAction="#onInventory" styleClass="sidebar-button" />
+    <Button fx:id="financeButton" text="Finance" onAction="#onFinance" styleClass="sidebar-button" />
     <Button fx:id="profileButton" text="Profile" onAction="#onProfile" styleClass="sidebar-button" />
   </children>
 </VBox>

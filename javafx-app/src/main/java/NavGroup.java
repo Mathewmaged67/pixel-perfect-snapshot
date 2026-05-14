@@ -5,5 +5,6 @@ public enum NavGroup {
   QUESTS,
   INVENTORY,
   PROFILE,
+  FINANCE,
   NONE
 }

@@ -17,6 +17,7 @@ public class LoginController extends BaseController implements Initializable {
   @FXML private TextField emailField;
   @FXML private PasswordField passwordField;
   @FXML private Label errorLabel;
+  @FXML private Button musicButton;
   @FXML private Button loginButton;
   @FXML private Button signupButton;
 

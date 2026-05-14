@@ -5,11 +5,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class NavController {
+  private static NavController instance;
+
   @FXML private Button dashboardButton;
   @FXML private Button workoutButton;
   @FXML private Button nutritionButton;
   @FXML private Button questsButton;
   @FXML private Button inventoryButton;
+  @FXML private Button financeButton;
   @FXML private Button profileButton;
 
   private final Map<NavGroup, Button> navButtons = new EnumMap<>(NavGroup.class);
@@ -17,12 +20,18 @@ public class NavController {
 
   @FXML
   private void initialize() {
+    instance = this;
     navButtons.put(NavGroup.DASHBOARD, dashboardButton);
     navButtons.put(NavGroup.WORKOUT, workoutButton);
     navButtons.put(NavGroup.NUTRITION, nutritionButton);
     navButtons.put(NavGroup.QUESTS, questsButton);
     navButtons.put(NavGroup.INVENTORY, inventoryButton);
+    navButtons.put(NavGroup.FINANCE, financeButton);
     navButtons.put(NavGroup.PROFILE, profileButton);
+  }
+
+  public static NavController getInstance() {
+    return instance;
   }
 
   public void setRouter(Router router) {
@@ -72,6 +81,13 @@ public class NavController {
   private void onInventory() {
     if (router != null) {
       router.goTo(Route.INVENTORY);
+    }
+  }
+
+  @FXML
+  private void onFinance() {
+    if (router != null) {
+      router.goTo(Route.FINANCE);
     }
   }
 

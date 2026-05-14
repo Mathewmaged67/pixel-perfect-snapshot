@@ -582,3 +582,283 @@
 .theme-light .heat-2 { -fx-background-color: #8ab8c5; }
 .theme-light .heat-3 { -fx-background-color: #4a9aaa; }
 .theme-light .heat-4 { -fx-background-color: #0a7995; }
+
+/* ===== FINANCE SECTION STYLES ===== */
+.finance-tab-pane {
+  -fx-background-color: transparent;
+  -fx-tab-min-width: 120;
+}
+
+.finance-tab-pane .tab-header-area {
+  -fx-background-color: transparent;
+}
+
+.finance-tab-pane .tab-header-background {
+  -fx-background-color: transparent;
+}
+
+.finance-tab-pane .tab {
+  -fx-background-color: #1a1330;
+  -fx-background-radius: 8 8 0 0;
+  -fx-padding: 6 16;
+  -fx-border-color: #2f264c;
+  -fx-border-width: 1 1 0 1;
+  -fx-border-radius: 8 8 0 0;
+  -fx-cursor: hand;
+}
+
+.finance-tab-pane .tab:selected {
+  -fx-background-color: #3a2a63;
+  -fx-border-color: #f3ba25;
+  -fx-border-width: 1 1 0 1;
+}
+
+.finance-tab-pane .tab .tab-label {
+  -fx-text-fill: #8e8ba6;
+  -fx-font-family: "Jersey 10";
+  -fx-font-size: 16;
+}
+
+.finance-tab-pane .tab:selected .tab-label {
+  -fx-text-fill: #f3ba25;
+}
+
+.finance-tab-content {
+  -fx-padding: 16 0 0 0;
+}
+
+.finance-table {
+  -fx-background-color: transparent;
+  -fx-border-color: #2e274e;
+  -fx-border-radius: 6;
+}
+
+.finance-table .column-header-background {
+  -fx-background-color: #241c43;
+}
+
+.finance-table .column-header, .finance-table .filler {
+  -fx-size: 28;
+  -fx-border-color: transparent;
+  -fx-background-color: #241c43;
+}
+
+.finance-table .column-header .label {
+  -fx-text-fill: #f3ba25;
+  -fx-font-family: "Jersey 10";
+  -fx-font-size: 16;
+}
+
+.finance-table .table-row-cell {
+  -fx-background-color: transparent;
+  -fx-text-fill: #f6e9d5;
+  -fx-font-family: "Jersey 10";
+  -fx-font-size: 16;
+}
+
+.finance-table .table-row-cell:selected {
+  -fx-background-color: #3a2a63;
+}
+
+.finance-table .table-cell {
+  -fx-text-fill: #f6e9d5;
+  -fx-font-family: "Jersey 10";
+  -fx-font-size: 16;
+  -fx-padding: 4 8;
+}
+
+.finance-summary-cards {
+  -fx-spacing: 16;
+}
+
+.finance-card-income {
+  -fx-border-color: #4bd26a;
+  -fx-border-width: 2;
+}
+
+.finance-card-expense {
+  -fx-border-color: #e85b57;
+  -fx-border-width: 2;
+}
+
+.finance-card-balance {
+  -fx-border-color: #6b79ff;
+  -fx-border-width: 2;
+}
+
+.finance-amount {
+  -fx-font-size: 22;
+  -fx-font-weight: bold;
+}
+
+.income-amount {
+  -fx-text-fill: #4bd26a;
+}
+
+.expense-amount {
+  -fx-text-fill: #e85b57;
+}
+
+.balance-amount {
+  -fx-text-fill: #6b79ff;
+}
+
+.resource-status {
+  -fx-font-size: 14;
+  -fx-padding: 2 8;
+  -fx-background-radius: 4;
+  -fx-border-radius: 4;
+}
+
+.status-healthy {
+  -fx-text-fill: #4bd26a;
+  -fx-background-color: rgba(75, 210, 106, 0.15);
+}
+
+.status-moderate {
+  -fx-text-fill: #f3ba25;
+  -fx-background-color: rgba(243, 186, 37, 0.15);
+}
+
+.status-good {
+  -fx-text-fill: #6b79ff;
+  -fx-background-color: rgba(107, 121, 255, 0.15);
+}
+
+.status-low {
+  -fx-text-fill: #e85b57;
+  -fx-background-color: rgba(232, 91, 87, 0.15);
+}
+
+.status-high {
+  -fx-text-fill: #4bd26a;
+  -fx-background-color: rgba(75, 210, 106, 0.15);
+}
+
+.resource-bar {
+  -fx-accent: #f3ba25;
+  -fx-pref-height: 12;
+  -fx-min-height: 12;
+  -fx-max-height: 12;
+}
+
+.coach-chat-box {
+  -fx-background-color: rgba(26, 18, 46, 0.95);
+  -fx-padding: 14;
+  -fx-spacing: 10;
+  -fx-min-height: 300;
+}
+
+.coach-message-box {
+  -fx-spacing: 8;
+  -fx-padding: 4;
+}
+
+.coach-message {
+  -fx-background-radius: 8;
+  -fx-border-radius: 8;
+  -fx-font-family: "Jersey 10";
+  -fx-font-size: 16;
+}
+
+.coach-bubble {
+  -fx-background-color: #2b2148;
+  -fx-border-color: #3a2a63;
+  -fx-border-width: 1;
+  -fx-text-fill: #f6e9d5;
+}
+
+.user-message {
+  -fx-background-color: #3a2a63;
+  -fx-border-color: #f3ba25;
+  -fx-border-width: 1;
+  -fx-text-fill: #f3ba25;
+  -fx-alignment: center-right;
+}
+
+.coach-bubble .label {
+  -fx-text-fill: #f6e9d5;
+}
+
+.user-message .label {
+  -fx-text-fill: #f3ba25;
+}
+
+/* Light theme overrides for finance */
+.theme-light .finance-tab-pane .tab {
+  -fx-background-color: #e8f0f2;
+  -fx-border-color: #c5d9de;
+}
+
+.theme-light .finance-tab-pane .tab:selected {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #0a7995;
+}
+
+.theme-light .finance-tab-pane .tab .tab-label {
+  -fx-text-fill: #5a8a97;
+}
+
+.theme-light .finance-tab-pane .tab:selected .tab-label {
+  -fx-text-fill: #0a7995;
+}
+
+.theme-light .finance-table .column-header-background,
+.theme-light .finance-table .column-header,
+.theme-light .finance-table .filler {
+  -fx-background-color: #e8f0f2;
+}
+
+.theme-light .finance-table .column-header .label {
+  -fx-text-fill: #0a7995;
+}
+
+.theme-light .finance-table .table-row-cell {
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .finance-table .table-row-cell:selected {
+  -fx-background-color: rgba(10, 121, 149, 0.15);
+}
+
+.theme-light .finance-table .table-cell {
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .coach-chat-box {
+  -fx-background-color: #ffffff;
+}
+
+.theme-light .coach-bubble {
+  -fx-background-color: #e8f0f2;
+  -fx-border-color: #c5d9de;
+}
+
+.theme-light .coach-bubble .label {
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .user-message {
+  -fx-background-color: rgba(10, 121, 149, 0.15);
+  -fx-border-color: #0a7995;
+}
+
+.theme-light .user-message .label {
+  -fx-text-fill: #0a7995;
+}
+
+.theme-light .finance-card-income {
+  -fx-border-color: #4bd26a;
+}
+
+.theme-light .finance-card-expense {
+  -fx-border-color: #e85b57;
+}
+
+.theme-light .finance-card-balance {
+  -fx-border-color: #6b79ff;
+}
+
+.theme-light .resource-bar {
+  -fx-accent: #0a7995;
+}

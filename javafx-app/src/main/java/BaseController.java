@@ -4,14 +4,9 @@ public abstract class BaseController implements AppController {
   protected Router router;
   protected AppState appState;
 
-  @FXML private NavController navController;
-
   @Override
   public void setRouter(Router router) {
     this.router = router;
-    if (navController != null) {
-      navController.setRouter(router);
-    }
   }
 
   @Override
@@ -21,8 +16,6 @@ public abstract class BaseController implements AppController {
 
   @Override
   public void onNavigatedTo(Route route) {
-    if (navController != null) {
-      navController.setActive(route);
-    }
+    // Navigation styling is handled by individual page controllers if needed
   }
 }

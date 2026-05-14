@@ -32,6 +32,13 @@ public class SceneFactory {
       appController.onNavigatedTo(route);
     }
 
+    // Initialize the nav controller if it was loaded with this scene
+    NavController navController = NavController.getInstance();
+    if (navController != null) {
+      navController.setRouter(router);
+      navController.setActive(route);
+    }
+
     Scene scene = new Scene(root, route.getWidth(), route.getHeight());
     String bgColor = "light".equalsIgnoreCase(appState.getUi().getTheme()) ? "#f2f6f7" : "#10002b";
     scene.setFill(Color.web(bgColor));

@@ -14,7 +14,8 @@ public enum Route {
   WORKOUT_HISTORY("Workout History", "WorkoutHistory.fxml", 1280, 800, NavGroup.WORKOUT),
   WORKOUT_TEMPLATES("Workout Templates", "WorkoutTemplates.fxml", 1280, 800, NavGroup.WORKOUT),
   WORKOUT_SUMMARY("Workout Summary", "WorkoutSummary.fxml", 1280, 800, NavGroup.WORKOUT),
-  PROFILE("Profile", "Profile.fxml", 1280, 800, NavGroup.PROFILE);
+  PROFILE("Profile", "Profile.fxml", 1280, 800, NavGroup.PROFILE),
+  FINANCE("Finance", "Finance.fxml", 1280, 800, NavGroup.FINANCE);
 
   private final String title;
   private final String fxmlFile;

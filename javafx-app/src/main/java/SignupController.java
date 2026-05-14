@@ -19,6 +19,7 @@ public class SignupController extends BaseController implements Initializable {
   @FXML private PasswordField passwordField;
   @FXML private PasswordField confirmPasswordField;
   @FXML private Label errorLabel;
+  @FXML private Button musicButton;
   @FXML private Button signupButton;
   @FXML private Button loginButton;
 
