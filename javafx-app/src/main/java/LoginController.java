@@ -28,6 +28,8 @@ public class LoginController extends BaseController implements Initializable {
     // Clear error message when user starts typing
     emailField.textProperty().addListener((obs, old, newVal) -> clearError());
     passwordField.textProperty().addListener((obs, old, newVal) -> clearError());
+
+    updateMusicButton();
   }
 
   @FXML
@@ -69,6 +71,31 @@ public class LoginController extends BaseController implements Initializable {
     // This is a placeholder that accepts any credentials
     // Replace with proper validation
     return !email.isEmpty() && !password.isEmpty() && password.length() >= 4;
+  }
+
+  @FXML
+  private void onToggleMusic() {
+    AudioManager audio = AudioManager.getInstance();
+    if (audio.isPlaying()) {
+      audio.pauseMusic();
+      musicButton.setText("♫ Music Off");
+    } else {
+      if (audio.getCurrentTrack() != null) {
+        audio.resumeMusic();
+      } else {
+        audio.playLoopingMusic("/music/background-music.mp3");
+      }
+      musicButton.setText("♫ Music On");
+    }
+  }
+
+  private void updateMusicButton() {
+    if (musicButton == null) return;
+    if (AudioManager.getInstance().isPlaying()) {
+      musicButton.setText("♫ Music On");
+    } else {
+      musicButton.setText("♫ Music Off");
+    }
   }
 
   private void showError(String message) {

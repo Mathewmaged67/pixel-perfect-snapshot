@@ -43,6 +43,7 @@
               <HBox spacing="10">
                 <Button text="Dark" onAction="#onThemeDark" styleClass="ghost-button" />
                 <Button text="Light" onAction="#onThemeLight" styleClass="ghost-button" />
+                <Button fx:id="musicButton" text="♫ Music" onAction="#onToggleMusic" styleClass="ghost-button" />
               </HBox>
               <HBox spacing="10">
                 <Button text="KG" onAction="#onUnitsKg" styleClass="ghost-button" />

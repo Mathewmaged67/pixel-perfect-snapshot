@@ -32,6 +32,8 @@ public class SignupController extends BaseController implements Initializable {
     usernameField.textProperty().addListener((obs, old, newVal) -> clearError());
     passwordField.textProperty().addListener((obs, old, newVal) -> clearError());
     confirmPasswordField.textProperty().addListener((obs, old, newVal) -> clearError());
+
+    updateMusicButton();
   }
 
   @FXML
@@ -106,6 +108,31 @@ public class SignupController extends BaseController implements Initializable {
     // Replace with proper validation and storage
     System.out.println("Creating account: " + email + " / " + username);
     return true;
+  }
+
+  @FXML
+  private void onToggleMusic() {
+    AudioManager audio = AudioManager.getInstance();
+    if (audio.isPlaying()) {
+      audio.pauseMusic();
+      musicButton.setText("♫ Music Off");
+    } else {
+      if (audio.getCurrentTrack() != null) {
+        audio.resumeMusic();
+      } else {
+        audio.playLoopingMusic("/music/background-music.mp3");
+      }
+      musicButton.setText("♫ Music On");
+    }
+  }
+
+  private void updateMusicButton() {
+    if (musicButton == null) return;
+    if (AudioManager.getInstance().isPlaying()) {
+      musicButton.setText("♫ Music On");
+    } else {
+      musicButton.setText("♫ Music Off");
+    }
   }
 
   private void showError(String message) {

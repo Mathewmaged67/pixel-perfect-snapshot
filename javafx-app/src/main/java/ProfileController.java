@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -21,6 +22,7 @@ public class ProfileController extends BaseController {
   @FXML private javafx.scene.image.ImageView spriteView;
   @FXML private GridPane heatmapGrid;
   @FXML private Label statusLabel;
+  @FXML private Button musicButton;
 
   @Override
   public void onNavigatedTo(Route route) {
@@ -81,6 +83,22 @@ public class ProfileController extends BaseController {
     router.goTo(Route.LOGIN);
   }
 
+  @FXML
+  private void onToggleMusic() {
+    AudioManager audio = AudioManager.getInstance();
+    if (audio.isPlaying()) {
+      audio.pauseMusic();
+      musicButton.setText("♫ Music Off");
+    } else {
+      if (audio.getCurrentTrack() != null) {
+        audio.resumeMusic();
+      } else {
+        audio.playLoopingMusic("/music/background-music.mp3");
+      }
+      musicButton.setText("♫ Music On");
+    }
+  }
+
   private void refresh() {
     if (appState == null) {
       return;
@@ -97,6 +115,7 @@ public class ProfileController extends BaseController {
 
     buildHeatmap();
     applyTheme();
+    updateMusicButton();
   }
 
   private void applyTheme() {
@@ -108,6 +127,15 @@ public class ProfileController extends BaseController {
       root.getStyleClass().add("theme-light");
     } else {
       root.getStyleClass().add("theme-dark");
+    }
+  }
+
+  private void updateMusicButton() {
+    if (musicButton == null) return;
+    if (AudioManager.getInstance().isPlaying()) {
+      musicButton.setText("♫ Music On");
+    } else {
+      musicButton.setText("♫ Music Off");
     }
   }
 

@@ -318,8 +318,8 @@ public class OnboardingController extends BaseController implements Initializabl
     int size = 12;
     WritableImage image = new WritableImage(size, size);
     PixelWriter writer = image.getPixelWriter();
-    Color base = Color.web("#f3ba25");
-    Color highlight = Color.web("#ffd56a");
+    Color base = Color.web("#0a7995");
+    Color highlight = Color.web("#3aaec9");
 
     fillRect(writer, 4, 4, 4, 4, base);
     fillRect(writer, 5, 5, 2, 2, highlight);
@@ -347,7 +347,7 @@ public class OnboardingController extends BaseController implements Initializabl
     int size = 12;
     WritableImage image = new WritableImage(size, size);
     PixelWriter writer = image.getPixelWriter();
-    Color base = Color.web("#f6e9d5");
+    Color base = Color.web("#0a3a47");
 
     int cx = 5;
     int cy = 6;

@@ -61,5 +61,11 @@
 
         </VBox>
 
+        <Button fx:id="musicButton" text="♫ Music On" onAction="#onToggleMusic" styleClass="ghost-button" StackPane.alignment="TOP_RIGHT">
+            <StackPane.margin>
+                <Insets top="16" right="16" />
+            </StackPane.margin>
+        </Button>
+
     </children>
 </StackPane>

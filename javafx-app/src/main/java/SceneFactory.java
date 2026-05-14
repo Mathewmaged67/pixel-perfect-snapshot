@@ -33,7 +33,8 @@ public class SceneFactory {
     }
 
     Scene scene = new Scene(root, route.getWidth(), route.getHeight());
-    scene.setFill(Color.web("#10002b"));
+    String bgColor = "light".equalsIgnoreCase(appState.getUi().getTheme()) ? "#f2f6f7" : "#10002b";
+    scene.setFill(Color.web(bgColor));
     if (Files.exists(appCss)) {
       scene.getStylesheets().add(appCss.toUri().toString());
     }

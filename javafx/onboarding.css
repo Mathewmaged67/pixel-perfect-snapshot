@@ -237,3 +237,150 @@
 .toggle-card:selected .class-icon {
   -fx-text-fill: #f3ba25;
 }
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+.theme-light .onboarding-root {
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .hero-overlay {
+  -fx-background-color: rgba(242, 246, 247, 0.85);
+}
+
+.theme-light .card {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #c5d9de;
+}
+
+.theme-light .title,
+.theme-light .title-large {
+  -fx-text-fill: #0a7995;
+}
+
+.theme-light .text-glow-gold {
+  -fx-effect: dropshadow(gaussian, rgba(10, 121, 149, 0.55), 8, 0.5, 0, 0);
+}
+
+.theme-light .step-label {
+  -fx-text-fill: #5a8a97;
+}
+
+.theme-light .progress-track {
+  -fx-background-color: #c5d9de;
+}
+
+.theme-light .progress-fill {
+  -fx-background-color: #0a7995;
+}
+
+.theme-light .field-label,
+.theme-light .class-title {
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .muted-text {
+  -fx-text-fill: #5a8a97;
+}
+
+.theme-light .input-field {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #c5d9de;
+  -fx-text-fill: #0a3a47;
+  -fx-prompt-text-fill: #5a8a97;
+}
+
+.theme-light .input-field:focused {
+  -fx-border-color: #0a7995;
+  -fx-effect: dropshadow(gaussian, rgba(10, 121, 149, 0.35), 6, 0.3, 0, 0);
+}
+
+.theme-light .btn,
+.theme-light .btn:default,
+.theme-light .btn-primary,
+.theme-light .btn-primary:default,
+.theme-light .btn-ghost,
+.theme-light .btn-ghost:default,
+.theme-light .btn-gold,
+.theme-light .btn-gold:default {
+  -fx-background-color: #0a7995;
+  -fx-text-fill: #ffffff;
+}
+
+.theme-light .btn-primary:hover,
+.theme-light .btn-ghost:hover {
+  -fx-background-color: rgba(10, 121, 149, 0.90);
+  -fx-text-fill: #ffffff;
+}
+
+.theme-light .btn-gold:hover {
+  -fx-opacity: 0.9;
+}
+
+.theme-light .btn:focused {
+  -fx-border-color: #0a7995;
+  -fx-effect: dropshadow(gaussian, rgba(10, 121, 149, 0.35), 8, 0.3, 0, 0);
+}
+
+.theme-light .theme-toggle {
+  -fx-background-color: rgba(242, 246, 247, 0.85);
+  -fx-border-color: #0a7995;
+}
+
+.theme-light .theme-toggle:hover {
+  -fx-background-color: #e8f0f2;
+  -fx-effect: dropshadow(gaussian, rgba(10, 121, 149, 0.35), 8, 0.3, 0, 0);
+}
+
+.theme-light .theme-toggle:focused {
+  -fx-border-color: #0a7995;
+  -fx-effect: dropshadow(gaussian, rgba(10, 121, 149, 0.45), 8, 0.3, 0, 0);
+}
+
+.theme-light .theme-icon {
+  -fx-effect: dropshadow(gaussian, rgba(10, 121, 149, 0.55), 6, 0.4, 0, 0);
+}
+
+.theme-light .theme-icon-moon {
+  -fx-effect: dropshadow(gaussian, rgba(10, 121, 149, 0.45), 6, 0.35, 0, 0);
+}
+
+.theme-light .toggle-pill {
+  -fx-border-color: #c5d9de;
+  -fx-text-fill: #5a8a97;
+}
+
+.theme-light .toggle-pill:hover {
+  -fx-border-color: #0a7995;
+}
+
+.theme-light .toggle-pill:selected {
+  -fx-border-color: #0a7995;
+  -fx-background-color: #0a7995;
+  -fx-text-fill: #ffffff;
+}
+
+.theme-light .toggle-card {
+  -fx-border-color: #c5d9de;
+}
+
+.theme-light .toggle-card:hover {
+  -fx-border-color: #0a7995;
+}
+
+.theme-light .toggle-card:selected {
+  -fx-border-color: #0a7995;
+  -fx-background-color: #e8f0f2;
+}
+
+.theme-light .class-tagline {
+  -fx-text-fill: #5a8a97;
+}
+
+.theme-light .class-icon {
+  -fx-text-fill: #5a8a97;
+  -fx-background-color: #e8f0f2;
+}
+
+.theme-light .toggle-card:selected .class-icon {
+  -fx-text-fill: #0a7995;
+}

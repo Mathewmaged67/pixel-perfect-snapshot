@@ -187,11 +187,11 @@ public class DashboardController extends BaseController {
     // Add header with Add button
     HBox headerBox = new HBox(6);
     Label title = new Label("PARTY");
-    title.setStyle("-fx-font-size: 10px; -fx-text-fill: #c9b361; -fx-font-weight: bold;");
+    title.setStyle("-fx-font-size: 10px; -fx-text-fill: #0a7995; -fx-font-weight: bold;");
     Region spacer = new Region();
     HBox.setHgrow(spacer, Priority.ALWAYS);
     Button addButton = new Button("Add");
-    addButton.setStyle("-fx-padding: 4 12 4 12; -fx-font-size: 11px; -fx-text-fill: #c9b361; -fx-border-color: #c9b361; -fx-border-width: 1; -fx-background-color: transparent; -fx-border-radius: 4; -fx-cursor: hand;");
+    addButton.setStyle("-fx-padding: 4 12 4 12; -fx-font-size: 11px; -fx-text-fill: #0a7995; -fx-border-color: #0a7995; -fx-border-width: 1; -fx-background-color: transparent; -fx-border-radius: 4; -fx-cursor: hand;");
     addButton.setOnAction(e -> onAddPartyMember());
     headerBox.getChildren().addAll(title, spacer, addButton);
     partyBox.getChildren().add(headerBox);

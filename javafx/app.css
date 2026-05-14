@@ -12,13 +12,13 @@
 }
 
 .theme-light {
-  -fx-background-color: #10002b;
-  -fx-text-fill: #f6e9d5;
+  -fx-background-color: #f2f6f7;
+  -fx-text-fill: #0a3a47;
 }
 
 .theme-light.app-root {
-  -fx-background-color: #10002b;
-  -fx-text-fill: #f6e9d5;
+  -fx-background-color: #f2f6f7;
+  -fx-text-fill: #0a3a47;
 }
 
 .button {
@@ -45,8 +45,8 @@
 }
 
 .theme-light .sidebar {
-  -fx-background-color: #10002b;
-  -fx-border-color: #2f264c;
+  -fx-background-color: #e8f0f2;
+  -fx-border-color: #c5d9de;
 }
 
 .sidebar-title {
@@ -72,16 +72,16 @@
 }
 
 .theme-light .sidebar-button {
-  -fx-text-fill: #d7c9b4;
+  -fx-text-fill: #0a3a47;
 }
 
 .theme-light .sidebar-button:hover {
-  -fx-background-color: #2b2148;
+  -fx-background-color: #dfe9eb;
 }
 
 .theme-light .sidebar-button-active {
-  -fx-background-color: #3a2a63;
-  -fx-text-fill: #f3ba25;
+  -fx-background-color: rgba(10, 121, 149, 0.15);
+  -fx-text-fill: #0a7995;
 }
 
 .content {
@@ -224,8 +224,8 @@
 }
 
 .theme-light .card {
-  -fx-background-color: rgba(26, 18, 46, 0.95);
-  -fx-border-color: #3a2a63;
+  -fx-background-color: #ffffff;
+  -fx-border-color: #c5d9de;
 }
 
 .primary-button {
@@ -444,3 +444,141 @@
   -fx-text-fill: #d7c9b4;
   -fx-font-size: 16;
 }
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+.theme-light .content,
+.theme-light .content-scroll .viewport,
+.theme-light .scroll-pane,
+.theme-light .scroll-pane > .viewport,
+.theme-light .login-root {
+  -fx-background-color: #f2f6f7;
+}
+
+.theme-light .page-title,
+.theme-light .section-title,
+.theme-light .hero-name,
+.theme-light .quest-title,
+.theme-light .stat-value,
+.theme-light .calorie-value,
+.theme-light .list-strong {
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .eyebrow,
+.theme-light .muted,
+.theme-light .stat-label,
+.theme-light .badge-label,
+.theme-light .form-hint {
+  -fx-text-fill: #5a8a97;
+}
+
+.theme-light .button,
+.theme-light .button:default,
+.theme-light .primary-button,
+.theme-light .link-button,
+.theme-light .ghost-button {
+  -fx-background-color: #0a7995;
+  -fx-text-fill: #ffffff;
+}
+
+.theme-light .button:hover,
+.theme-light .link-button:hover {
+  -fx-background-color: rgba(10, 121, 149, 0.90);
+}
+
+.theme-light .sidebar-title,
+.theme-light .card-title,
+.theme-light .pill-text,
+.theme-light .reward-label,
+.theme-light .badge-value,
+.theme-light .quest-ready {
+  -fx-text-fill: #0a7995;
+}
+
+.theme-light .pill {
+  -fx-background-color: #e8f0f2;
+  -fx-border-color: rgba(10, 121, 149, 0.5);
+}
+
+.theme-light .stat-box {
+  -fx-background-color: #e8f0f2;
+  -fx-border-color: #c5d9de;
+}
+
+.theme-light .badge {
+  -fx-background-color: #e8f0f2;
+  -fx-border-color: #c5d9de;
+}
+
+.theme-light .action-card {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #c5d9de;
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .action-card:hover {
+  -fx-background-color: #e8f0f2;
+}
+
+.theme-light .input,
+.theme-light .form-input {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #c5d9de;
+  -fx-text-fill: #0a3a47;
+  -fx-prompt-text-fill: #5a8a97;
+}
+
+.theme-light .input:focused,
+.theme-light .form-input:focused {
+  -fx-border-color: #0a7995;
+}
+
+.theme-light .progress-bar {
+  -fx-accent: #0a7995;
+}
+
+.theme-light .tag {
+  -fx-background-color: #e8f0f2;
+  -fx-text-fill: #0a7995;
+}
+
+.theme-light .list-view {
+  -fx-border-color: #c5d9de;
+}
+
+.theme-light .list-view .list-cell {
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .list-view .list-cell:filled:selected {
+  -fx-background-color: rgba(10, 121, 149, 0.15);
+}
+
+.theme-light .table-view {
+  -fx-border-color: #c5d9de;
+}
+
+.theme-light .table-view .column-header-background,
+.theme-light .table-view .column-header,
+.theme-light .table-view .filler {
+  -fx-background-color: #e8f0f2;
+}
+
+.theme-light .table-row-cell {
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .table-row-cell:selected {
+  -fx-background-color: rgba(10, 121, 149, 0.15);
+}
+
+.theme-light .form-label,
+.theme-light .subtitle {
+  -fx-text-fill: #0a3a47;
+}
+
+.theme-light .heat-0 { -fx-background-color: #e8f0f2; }
+.theme-light .heat-1 { -fx-background-color: #c5d9de; }
+.theme-light .heat-2 { -fx-background-color: #8ab8c5; }
+.theme-light .heat-3 { -fx-background-color: #4a9aaa; }
+.theme-light .heat-4 { -fx-background-color: #0a7995; }
